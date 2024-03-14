@@ -42,8 +42,8 @@ function createMap(evStations){
 
     // Create the map object with options.
     let myMap = L.map("map", {
-    center: [11.75, 18.05],
-    zoom: 2,
+    center: [38.5, -96.5],
+    zoom: 5,
     layers: [base, evStations]
     });
 
