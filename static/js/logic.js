@@ -97,11 +97,17 @@ function createMap(data_2018, data_2022){
     // Create the map object with options.
     let myMap = L.map("map", {
     center: wash_center,
+    zoomSnap: .5,
     zoom: 7,
     layers: [base, markers_2018]
     });
 
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
     L.control.layers(null, overlayMaps).addTo(myMap);
+
+//     myMap.on('click', function() { 
+//         alert(myMap.getBounds().getNorthWest());
+//    });
+    console.log(myMap.getBounds().getNorthWest());
 
 }
