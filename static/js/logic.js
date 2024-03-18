@@ -28,7 +28,14 @@ function addStations(data, marker_color){
             subset.push(station);
         }
     }
+    
+    // Testing a way to get a unique list of properties of the EV stations 
+    //https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
     console.log(subset.length);
+    let networks = subset.map(x => x.properties.ev_network);
+    let unique = [...new Set (networks)];
+    console.log(unique);
+
     let stations = L.geoJSON(subset, {
         pointToLayer: createCircleMarker,
         onEachFeature: on_each_feature
@@ -54,7 +61,7 @@ function addStations(data, marker_color){
         `<p> Num. Level 2 Ports: ${station.ev_level2_evse_num}</p>`+
         `<p> Num. DC Fast Ports: ${station.ev_dc_fast_num}</p>`+
         `<p> Total Ports: ${total_ports(station)}</p>`+
-        `<p> EV Network: ${station.ev}</p>`+
+        `<p> EV Network: ${station.ev_network}</p>`+
         `<p> EV Pricing: ${station.ev_pricing}`);
       }
     
