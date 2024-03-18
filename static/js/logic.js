@@ -36,19 +36,31 @@ function addStations(data, marker_color){
 
     function createCircleMarker(feature, latlng) {
     return L.circleMarker(latlng, {
+        //radius: total_ports(feature.properties) * 2,
         radius: 10,
         fillColor: marker_color,
         color: "#000", 
         weight: .5,
-        fillOpacity: .5
+        fillOpacity: .4
         });
     }
 
     function on_each_feature(feature, layer) {
-        layer.bindPopup(`<h3>${feature.properties.station_name}</h3><hr>`+
-        `<p> Num. Level 2 Ports: ${feature.properties.ev_level2_evse_num}</p>`+
-        `<p> EV Pricing: ${feature.properties.ev_pricing}`);
+        let station = feature.properties;
+        //let ports = station.ev_dc_fast_num + station.ev_level1_evse_num + station.ev_level2_evse_num;
+        layer.bindPopup(`<h3>${station.station_name}</h3><hr>`+
+        `<p> Station Status: ${station.status_code}</p>`+
+        `<p> Num. Level 1 Ports: ${station.ev_level1_evse_num}</p>`+
+        `<p> Num. Level 2 Ports: ${station.ev_level2_evse_num}</p>`+
+        `<p> Num. DC Fast Ports: ${station.ev_dc_fast_num}</p>`+
+        `<p> Total Ports: ${total_ports(station)}</p>`+
+        `<p> EV Network: ${station.ev}</p>`+
+        `<p> EV Pricing: ${station.ev_pricing}`);
       }
+    
+    function total_ports(station){
+    return station.ev_dc_fast_num + station.ev_level1_evse_num + station.ev_level2_evse_num;
+    }
 
     let cluster = L.markerClusterGroup();
     stations.addTo(cluster)
