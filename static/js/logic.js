@@ -43,8 +43,8 @@ function addStations(data, marker_color){
 
     function createCircleMarker(feature, latlng) {
     return L.circleMarker(latlng, {
-        //radius: total_ports(feature.properties) * 2,
-        radius: 10,
+        radius: total_ports(feature.properties) * 2,
+        //radius: 10,
         fillColor: marker_color,
         color: "#000", 
         weight: .5,
@@ -72,7 +72,7 @@ function addStations(data, marker_color){
     let cluster = L.markerClusterGroup();
     stations.addTo(cluster)
     //createMap(cluster);
-    return stations;
+    return cluster;
 }
 function createMap(data_2018, data_2022){
     // Create the tile layer (background) for map
