@@ -15,7 +15,12 @@ jQuery.getJSON(washington_2018, function(data_2018) {
     jQuery.getJSON(washington_2022, function(data_2022) {
         jQuery.getJSON(counties, function(county_data){
             jQuery.getJSON(zip_codes, function(zip_data){
-                console.log(zip_data);
+                console.log(county_data.features);
+                for (i = 0; i < county_data.features.length; i++){
+                    let county = county_data.features[i].properties;
+                    county.pop = Math.floor(Math.random() * 100);
+                }
+                console.log(county_data.features);
                 createMap(data_2018, data_2022,county_data,zip_data);
             });
         });
@@ -99,7 +104,7 @@ function createMap(data_2018, data_2022, county_data, zip_data){
     let overlayMaps = {
     "EV Stations 2018": markers_2018,
     "EV Stations 2022": markers_2022,
-    "County Lines": L.geoJSON(county_data),
+    "County Lines": L.geoJSON(county_data, {style: style}),
     "Zip Code Lines": L.geoJSON(zip_data,{
         attribution: '&copy; <a href="https://cartographyvectors.com/map/1617-washington-zip-codes">Cartographyvectors</a> contributors'})
     };
@@ -120,4 +125,26 @@ function createMap(data_2018, data_2022, county_data, zip_data){
 //    });
     console.log(myMap.getBounds().getNorthWest());
 
+}
+
+function getColor(d) {
+    return d > 90 ? '#800026' :
+           d > 80  ? '#BD0026' :
+           d > 70  ? '#E31A1C' :
+           d > 50  ? '#FC4E2A' :
+           d > 30   ? '#FD8D3C' :
+           d > 20   ? '#FEB24C' :
+           d > 10   ? '#FED976' :
+                      '#FFEDA0';
+}
+
+function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.pop),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
 }
