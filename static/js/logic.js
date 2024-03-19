@@ -5,13 +5,20 @@ const washington_2024 = 'data/EV_Stations_Washington/washington_2024.01.31.geojs
 const washington_2018 = 'data/EV_Stations_Washington/washington_2018.01.31.geojson';
 const washington_2022 = 'data/EV_Stations_Washington/washington_2022.01.31.geojson';
 
+const counties = 'data/Choropleth_boundaries/washington-state-counties_.geojson';
+const zip_codes = 'data/Choropleth_boundaries/washington-zip-codes-_1617.geojson';
+
 const us_center = [38.5, -96.5];        // zoom level 5
 const wash_center = [47.4, -120.8];     // zoom level 
 
 jQuery.getJSON(washington_2018, function(data_2018) {
     jQuery.getJSON(washington_2022, function(data_2022) {
-
-        createMap(data_2018, data_2022);
+        jQuery.getJSON(counties, function(county_data){
+            jQuery.getJSON(zip_codes, function(zip_data){
+                console.log(zip_data);
+                createMap(data_2018, data_2022,county_data,zip_data);
+            });
+        });
     });
 });
 
@@ -74,7 +81,7 @@ function addStations(data, marker_color){
     //createMap(cluster);
     return cluster;
 }
-function createMap(data_2018, data_2022){
+function createMap(data_2018, data_2022, county_data, zip_data){
     // Create the tile layer (background) for map
     let base = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -91,7 +98,10 @@ function createMap(data_2018, data_2022){
     // Create an overlayMaps object to hold the bikeStations layer.
     let overlayMaps = {
     "EV Stations 2018": markers_2018,
-    "EV Stations 2022": markers_2022
+    "EV Stations 2022": markers_2022,
+    "County Lines": L.geoJSON(county_data),
+    "Zip Code Lines": L.geoJSON(zip_data,{
+        attribution: '&copy; <a href="https://cartographyvectors.com/map/1617-washington-zip-codes">Cartographyvectors</a> contributors'})
     };
 
     // Create the map object with options.
