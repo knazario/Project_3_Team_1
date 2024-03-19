@@ -34,13 +34,31 @@ function addStations(data, marker_color){
     let evStations = L.geoJSON(data.features);
 
     let subset = [];
+    let available = [], planned= [], unavailable = [];
+    let codes = {'E': 'available', 
+                'P': 'planned',
+                'T': 'unavailable'}
+    console.log('Test'+codes['E']);
     for (i = 0; i < data.features.length; i++){
         let station = data.features[i];
         if (station.geometry.coordinates[0] !== null ){
             subset.push(station);
+            available.push(station.properties.status_code);
         }
     }
     
+    console.log(available);
+
+    let statuses = subset.map(x=> x.properties.status_code);
+    let status_count = {};
+    statuses.forEach(ele => {
+        if (status_count[ele]) {
+            status_count[ele] += 1;
+        } else {
+            status_count[ele] = 1;
+        }
+    });
+    console.log('status' + status_count);
     // Testing a way to get a unique list of properties of the EV stations 
     //https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
     console.log(subset.length);
