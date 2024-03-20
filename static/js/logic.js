@@ -15,12 +15,11 @@ jQuery.getJSON(washington_2018, function(data_2018) {
     jQuery.getJSON(washington_2022, function(data_2022) {
         jQuery.getJSON(counties, function(county_data){
             jQuery.getJSON(zip_codes, function(zip_data){
-                console.log(county_data.features);
                 for (i = 0; i < county_data.features.length; i++){
                     let county = county_data.features[i].properties;
                     county.pop = Math.floor(Math.random() * 100);
                 }
-                console.log(county_data.features);
+                //console.log(county_data.features);
                 createMap(data_2018, data_2022,county_data,zip_data);
             });
         });
@@ -34,13 +33,37 @@ function addStations(data, marker_color){
     let evStations = L.geoJSON(data.features);
 
     let subset = [];
+    let available = [], planned= [], unavailable = [];
+    let codes = {'E': available, 
+                'P': planned,
+                'T': unavailable}
     for (i = 0; i < data.features.length; i++){
         let station = data.features[i];
         if (station.geometry.coordinates[0] !== null ){
             subset.push(station);
+            let station_code = station.properties.status_code
+            codes[station_code].push(station);
         }
     }
+    // Using filter to only use current stations (avaialble and unavaiable) and any stations without coordinate data
+    let subset2= data.features.filter(station => station.properties.status_code !== 'P' && station.geometry.coordinates[0] !== null);
+    console.log('subset2:', subset2);
+
     
+    console.log('Available: '+ available.length);
+    console.log('Planned: '+ planned.length);
+    console.log('Unavailable: '+ unavailable.length);
+
+    let statuses = subset.map(x=> x.properties.status_code);
+    let status_count = {};
+    statuses.forEach(ele => {
+        if (status_count[ele]) {
+            status_count[ele] += 1;
+        } else {
+            status_count[ele] = 1;
+        }
+    });
+    console.log('status' + status_count);
     // Testing a way to get a unique list of properties of the EV stations 
     //https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
     console.log(subset.length);
@@ -56,7 +79,8 @@ function addStations(data, marker_color){
     function createCircleMarker(feature, latlng) {
     return L.circleMarker(latlng, {
         //radius: total_ports(feature.properties) * 2,
-        radius: 10,
+        radius: Math.sqrt(total_ports(feature.properties)) * 4,
+        //radius: 10,
         fillColor: marker_color,
         color: "#000", 
         weight: .5,
@@ -84,7 +108,7 @@ function addStations(data, marker_color){
     let cluster = L.markerClusterGroup();
     stations.addTo(cluster)
     //createMap(cluster);
-    return stations;
+    return cluster;
 }
 function createMap(data_2018, data_2022, county_data, zip_data){
     // Create the tile layer (background) for map
@@ -119,12 +143,6 @@ function createMap(data_2018, data_2022, county_data, zip_data){
 
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
     L.control.layers(null, overlayMaps).addTo(myMap);
-
-//     myMap.on('click', function() { 
-//         alert(myMap.getBounds().getNorthWest());
-//    });
-    console.log(myMap.getBounds().getNorthWest());
-
 }
 
 function getColor(d) {
