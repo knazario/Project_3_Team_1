@@ -7,6 +7,7 @@ const washington_2022 = 'data/EV_Stations_Washington/washington_2022.01.31.geojs
 
 const counties = 'data/Choropleth_boundaries/washington-state-counties_.geojson';
 const zip_codes = 'data/Choropleth_boundaries/washington-zip-codes-_1617.geojson';
+const census_data_2021 = 'data/census_data/census_2021redo.json'
 
 const us_center = [38.5, -96.5];        // zoom level 5
 const wash_center = [47.4, -120.8];     // zoom level 
@@ -15,12 +16,32 @@ jQuery.getJSON(washington_2018, function(data_2018) {
     jQuery.getJSON(washington_2022, function(data_2022) {
         jQuery.getJSON(counties, function(county_data){
             jQuery.getJSON(zip_codes, function(zip_data){
-                for (i = 0; i < county_data.features.length; i++){
-                    let county = county_data.features[i].properties;
-                    county.pop = Math.floor(Math.random() * 100);
-                }
-                //console.log(county_data.features);
-                createMap(data_2018, data_2022,county_data,zip_data);
+                jQuery.getJSON(census_data_2021, function(pop_data){
+                    console.log('census',pop_data.data);
+                    console.log(zip_data.features);
+                    let pop_dict = {};
+                    for (i = 0; i < pop_data.data.length; i++){
+                        let zip = pop_data.data[i];
+                        pop_dict[zip[1]] = zip[2];
+                    }
+                    console.log(pop_dict);
+                    console.log('98822', pop_dict['98822']);
+
+                    console.log(zip_data.features[0].properties.ZCTA5CE10);
+                    for (i = 0; i < zip_data.features.length; i++){
+                        let wash_zip = zip_data.features[i].properties.ZCTA5CE10;
+                        let feature = zip_data.features[i].properties;
+                        feature.population_2021 = pop_dict[wash_zip]; 
+                    }
+                    console.log(zip_data.features);
+
+                    for (i = 0; i < county_data.features.length; i++){
+                        let county = county_data.features[i].properties;
+                        county.pop = Math.floor(Math.random() * 100);
+                    }
+
+                    createMap(data_2018, data_2022,county_data,zip_data);
+                });
             });
         });
     });
@@ -54,16 +75,6 @@ function addStations(data, marker_color){
     console.log('Planned: '+ planned.length);
     console.log('Unavailable: '+ unavailable.length);
 
-    let statuses = subset.map(x=> x.properties.status_code);
-    let status_count = {};
-    statuses.forEach(ele => {
-        if (status_count[ele]) {
-            status_count[ele] += 1;
-        } else {
-            status_count[ele] = 1;
-        }
-    });
-    console.log('status' + status_count);
     // Testing a way to get a unique list of properties of the EV stations 
     //https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
     console.log(subset.length);
