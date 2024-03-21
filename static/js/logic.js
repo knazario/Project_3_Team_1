@@ -18,22 +18,24 @@ jQuery.getJSON(washington_2018, function(data_2018) {
             jQuery.getJSON(zip_codes, function(zip_data){
                 jQuery.getJSON(census_data_2021, function(pop_data){
                     console.log('census',pop_data.data);
-                    console.log(zip_data.features);
+
                     let pop_dict = {};
                     for (i = 0; i < pop_data.data.length; i++){
                         let zip = pop_data.data[i];
                         pop_dict[zip[1]] = zip[2];
                     }
-                    console.log(pop_dict);
-                    console.log('98822', pop_dict['98822']);
+                    console.log('98822 population: ', pop_dict['98822']);
 
-                    console.log(zip_data.features[0].properties.ZCTA5CE10);
                     for (i = 0; i < zip_data.features.length; i++){
                         let wash_zip = zip_data.features[i].properties.ZCTA5CE10;
                         let feature = zip_data.features[i].properties;
                         feature.population_2021 = pop_dict[wash_zip]; 
                     }
                     console.log(zip_data.features);
+                    console.log('population', 
+                    zip_data.features[0].properties.ZCTA5CE10,
+                    zip_data.features[0].properties.population_2021);
+                    console.log(getColor(zip_data.features[0].properties.population_2021))
 
                     for (i = 0; i < county_data.features.length; i++){
                         let county = county_data.features[i].properties;
@@ -74,13 +76,6 @@ function addStations(data, marker_color){
     console.log('Available: '+ available.length);
     console.log('Planned: '+ planned.length);
     console.log('Unavailable: '+ unavailable.length);
-
-    // Testing a way to get a unique list of properties of the EV stations 
-    //https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
-    console.log(subset.length);
-    let networks = subset.map(x => x.properties.ev_network);
-    let unique = [...new Set (networks)];
-    console.log(unique);
 
     let stations = L.geoJSON(subset, {
         pointToLayer: createCircleMarker,
@@ -130,18 +125,21 @@ function createMap(data_2018, data_2022, county_data, zip_data){
 
     // Create a baseMaps object to hold the lightmap layer.
     let baseMaps = {
-    "Gray Scale": base
+        "Gray Scale": base
     };
 
     markers_2018 = addStations(data_2018, 'red');
     markers_2022 = addStations(data_2022, 'blue');
     // Create an overlayMaps object to hold the bikeStations layer.
     let overlayMaps = {
-    "EV Stations 2018": markers_2018,
-    "EV Stations 2022": markers_2022,
-    "County Lines": L.geoJSON(county_data, {style: style}),
-    "Zip Code Lines": L.geoJSON(zip_data,{
-        attribution: '&copy; <a href="https://cartographyvectors.com/map/1617-washington-zip-codes">Cartographyvectors</a> contributors'})
+        "EV Stations 2018": markers_2018,
+        "EV Stations 2022": markers_2022,
+        "County Lines": L.geoJSON(county_data, {style: style_county}),
+        "Zip Code Lines": L.geoJSON(zip_data,{ 
+            style: style_zip,
+            attribution: '&copy; <a href="https://cartographyvectors.com/map/1617-washington-zip-codes">Cartographyvectors</a> contributors',
+            onEachFeature: on_each_feature_zip
+        })
     };
 
     // Create the map object with options.
@@ -154,22 +152,37 @@ function createMap(data_2018, data_2022, county_data, zip_data){
 
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
     L.control.layers(null, overlayMaps).addTo(myMap);
+
+    function on_each_feature_zip(feature, layer) {
+        layer.bindPopup(`<h4>${feature.properties.population_2021}</h4>`)
+    }
 }
 
 function getColor(d) {
-    return d > 90 ? '#800026' :
-           d > 80  ? '#BD0026' :
-           d > 70  ? '#E31A1C' :
-           d > 50  ? '#FC4E2A' :
-           d > 30   ? '#FD8D3C' :
-           d > 20   ? '#FEB24C' :
-           d > 10   ? '#FED976' :
-                      '#FFEDA0';
+    return d > 100000 ? '#800026' :
+           d > 90000  ? '#BD0026' :
+           d > 50000  ? '#E31A1C' :
+           d > 30000  ? '#FC4E2A' :
+           d > 20000   ? '#FD8D3C' :
+           d > 5000   ? '#FEB24C' :
+           d > 2000   ? '#FED976' :
+                         '#FFEDA0';
 }
 
-function style(feature) {
+function style_county(feature) {
     return {
         fillColor: getColor(feature.properties.pop),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
+
+function style_zip(feature_zip) {
+    return {
+        fillColor: getColor(feature_zip.properties.population_2021),
         weight: 2,
         opacity: 1,
         color: 'white',
