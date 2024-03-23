@@ -130,13 +130,37 @@ function createMap(data_2018, data_2022, zip_data){
     center: wash_center,
     zoomSnap: .5,
     zoom: 7.5,
+    maxBounds: L.latLngBounds(L.latLng(44, -128), L.latLng(51, -114)),
     layers: [base, zip_pop_2018, markers_2018]
     });
+    console.log(myMap.getBounds().getSouthWest().toString()); 
+    console.log(myMap.getBounds().getNorthEast().toString());
 
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
     L.control.layers(null, overlayMaps).addTo(myMap);
 
     L.control.scale({maxWidth: 150}).addTo(myMap); 
+
+    // create a legend control object
+    var legend = L.control({position: 'bottomright'});
+    // create div for legend and provide values when added to map
+    legend.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend'),
+        population = [0, 2000, 5000, 20000, 30000, 50000, 90000,100000],
+            labels = [];
+        // add legend title
+        div.innerHTML = '<h4> Population</h4>';
+        // loop through our population intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < population.length; i++) {
+            div.innerHTML +=
+                '<i style="background:' + getColor(population[i] + 1) + '"></i> ' +
+                population[i] + (population[i + 1] ? '&ndash;' + population[i + 1] + '<br>' : '+');
+        }
+
+        return div; //returning div to be placed on map
+    };
+
+    legend.addTo(myMap);    // add legend to map
 }
 
 function getColor(d) {
