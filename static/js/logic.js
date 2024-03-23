@@ -13,11 +13,16 @@ const census_data_2022 = 'data/census_data/census_2022redo.json';
 const us_center = [38.5, -96.5];        // zoom level 5
 const wash_center = [47.3, -120.8];     // zoom level 7.5
 
-jQuery.getJSON(washington_2018, function(data_2018) {
-    jQuery.getJSON(washington_2022, function(data_2022) {
-        jQuery.getJSON(zip_codes, function(zip_data){
-            jQuery.getJSON(census_data_2018, function(pop_data_2018){
-                jQuery.getJSON(census_data_2022, function(pop_data_2022){
+console.log("test script");
+
+d3.json(washington_2018).then( function(data_2018) {
+    d3.json(washington_2022).then( function(data_2022) {
+        d3.json(zip_codes).then( function(zip_data){
+            d3.json(census_data_2018).then( function(pop_data_2018){
+                d3.json(census_data_2022).then( function(pop_data_2022){
+                
+                console.log("test");
+                console.log(data_2018);
 
                 let pop_dict_2018 = {};
                 for (i = 0; i < pop_data_2018.data.length; i++){
@@ -146,7 +151,10 @@ function createMap(data_2018, data_2022, zip_data){
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
     L.control.layers(null, overlayMaps).addTo(myMap);
 
+    L.control.scale({maxWidth: 150}).addTo(myMap);
+
     function on_each_feature_zip(feature, layer,feature_pop, year ) {
+        let pop = 
         layer.bindPopup(`<h3>Zip Code: ${feature.properties.ZCTA5CE10}<hr>`+
         `<h4>${year} Population: ${feature_pop}</h4>`);
     }   
