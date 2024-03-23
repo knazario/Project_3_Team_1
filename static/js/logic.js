@@ -61,14 +61,36 @@ function addStations(data, marker_color, marker_type){
 
     function on_each_feature(feature, layer) {
         let station = feature.properties;
+        if (station.ev_pricing == null){
+            station.ev_pricing = "Not provided"
+        }
         layer.bindPopup(`<h3>${station.station_name}</h3><hr>`+
         `<p> EV Network: ${station.ev_network}</p>`+
         `<p> Total Ports: ${total_ports(station)}</p>`+
-        `<p> Num. Level 1 Ports: ${station.ev_level1_evse_num}</p>`+
-        `<p> Num. Level 2 Ports: ${station.ev_level2_evse_num}</p>`+
-        `<p> Num. DC Fast Ports: ${station.ev_dc_fast_num}</p>`+
+        `<p> Num. Level 1 Ports: ${station.ev_level1_evse_num == null ? 0 :station.ev_level1_evse_num }</p>`+
+        `<p> Num. Level 2 Ports: ${station.ev_level2_evse_num == null ? 0 :station.ev_level2_evse_num}</p>`+
+        `<p> Num. DC Fast Ports: ${station.ev_dc_fast_num== null ? 0 :station.ev_dc_fast_num}</p>`+
         `<p> EV Pricing: ${station.ev_pricing}`);
-      }
+        layer.on({
+            // Adjust opacity and radius (bigger) on mouseover
+            mouseover: function(event) {
+              layer = event.target;
+              layer.setStyle({
+                fillOpacity: 0.8,
+                radius: (Math.sqrt(total_ports(feature.properties)) * 4) + 3
+              });
+            },
+            // Revert back to default style after mouseover (mouseout)
+            mouseout: function(event) {
+              layer = event.target;
+              layer.setStyle({
+                fillOpacity: 0.5, 
+                radius: Math.sqrt(total_ports(feature.properties)) * 4
+              });
+            }
+        })
+    
+    }
     
     function total_ports(station){
     return station.ev_dc_fast_num + station.ev_level1_evse_num + station.ev_level2_evse_num;
@@ -86,9 +108,16 @@ function createMap(data_2018, data_2022, zip_data){
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     })
 
+    let dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20
+    });
+
     // Create a baseMaps object to hold the lightmap layer.
     let baseMaps = {
-        "Street Layer": base
+        "Street Layer": base, 
+        "Dark Layer": dark
     };
 
     let markers_2018 = addStations(data_2018, 'red', 'marker');
@@ -137,7 +166,7 @@ function createMap(data_2018, data_2022, zip_data){
     console.log(myMap.getBounds().getNorthEast().toString());
 
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
-    L.control.layers(null, overlayMaps).addTo(myMap);
+    L.control.layers(baseMaps, overlayMaps).addTo(myMap);
 
     L.control.scale({maxWidth: 150}).addTo(myMap); 
 
@@ -187,4 +216,22 @@ function style_zip(feature_pop) {
 function on_each_feature_zip(feature, layer,feature_pop, year ) {
     layer.bindPopup(`<h3>Zip Code: ${feature.properties.ZCTA5CE10}<hr>`+
     `<h4>${year} Population: ${feature_pop}</h4>`);
+    layer.on({
+        // Adjust opacity on mouseover
+        mouseover: function(event) {
+          layer = event.target;
+          layer.setStyle({
+            fillOpacity: 0.8,
+            weight: 1
+          });
+        },
+        // Revert back to default style after mouseover (mouseout)
+        mouseout: function(event) {
+          layer = event.target;
+          layer.setStyle({
+            fillOpacity: 0.5, 
+            weight: .5
+          });
+        }
+    })
 }  
