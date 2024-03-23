@@ -152,15 +152,49 @@ function createMap(data_2018, data_2022, zip_data){
     }   
 }
 
+// Create a legend providing context for map data
+function createLegend(myMap){    
+    var legend = L.control({position: 'bottomright'});
+
+    legend.onAdd = function() {
+        var div = L.DomUtil.create("div", "pop-legend");
+        div.innerHTML += "<h4>Population by Zip Code</h4>";
+        div.innerHTML += '<i style="background: #00FF00"></i><span>0 - 1K</span><br>';
+        div.innerHTML += '<i style="background: #477AC2"></i><span>1K - 5K</span><br>';
+        div.innerHTML += '<i style="background: #87BD7B"></i><span>5K - 25K</span><br>';
+        div.innerHTML += '<i style="background: #00E700"></i><span>25K - 30K</span><br>';
+        div.innerHTML += '<i style="background: #B9BAB9"></i><span>30K - 35K</span><br>';
+        div.innerHTML += '<i style="background: #878987"></i><span>35K - 40K</span><br>';
+        div.innerHTML += '<i style="background: #737373"></i><span>40K - 50K</span><br>';
+        div.innerHTML += '<i style="background: #111111"></i><span>50K+</span><br>';
+
+
+// legend.onAdd = function () {
+//     var div = L.DomUtil.create('div', 'pop-legend'),
+//         pops = [0, 1000, 5000, 25000, 30000, 35000, 40000, 50000],
+//         labels = [];
+
+//     // loop through our population intervals and generate a label with a colored square for each interval
+//     for (var i = 0; i < pops.length; i++) {
+//         div.innerHTML +=
+//             '<i style="background:' + getColor(pops[i] + 1) + '"></i> ' +
+//             pops[i] + (pops[i + 1] ? '&ndash;' + pops[i + 1] + '<br>' : '+');
+
+        return div;
+    };
+    legend.addTo(myMap);
+}
+createLegend(myMap);
+
 function getColor(d) {
-    return d > 100000 ? '#800026' :
-           d > 90000  ? '#BD0026' :
-           d > 50000  ? '#E31A1C' :
-           d > 30000  ? '#FC4E2A' :
-           d > 20000   ? '#FD8D3C' :
-           d > 5000   ? '#FEB24C' :
-           d > 2000   ? '#FED976' :
-                         '#FFEDA0';
+    return d > 50000 ? '#111111' :
+           d > 40000  ? '#737373' :
+           d > 35000  ? '#878987' :
+           d > 30000  ? '#B9BAB9' :
+           d > 25000  ? '#00E700' :
+           d > 5000   ? '#87BD7B' :
+           d > 1000   ? '#00CC00' :
+                         '#00FF00';
 }
 
 
