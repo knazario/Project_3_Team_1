@@ -3,9 +3,12 @@ body {
   margin: 0;
 }
 
-#map,
-body,
-html {
+#map {
+  height: 100%; 
+}
+
+html, 
+body{
   height: 100%;
 }
 
@@ -13,6 +16,7 @@ html {
   line-height: 18px;
   color: #555;
 }
+
 .legend i {
   width: 18px;
   height: 18px;
