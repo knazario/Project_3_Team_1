@@ -151,7 +151,7 @@ function createMap(data_2018, data_2022, zip_data){
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
     L.control.layers(null, overlayMaps).addTo(myMap);
 
-    L.control.scale().addTo(myMap);
+    L.control.scale({maxWidth: 150}).addTo(myMap);
 
     function on_each_feature_zip(feature, layer,feature_pop, year ) {
         let pop = 
