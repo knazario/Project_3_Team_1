@@ -1,40 +1,19 @@
-// 
-const path = 'data/EV_Stations_All_US/all_stations_2014.01.31.geojson';
-const washington_2014 = 'data/EV_Stations_Washington/washington_2014.01.31.geojson';
-const washington_2024 = 'data/EV_Stations_Washington/washington_2024.01.31.geojson';
-const washington_2018 = 'data/EV_Stations_Washington/washington_2018.01.31.geojson';
-const washington_2022 = 'data/EV_Stations_Washington/washington_2022.01.31.geojson';
+//  set paths for local dataf files
+const WASHINGTON_2018 = 'data/EV_Stations_Washington/washington_2018.01.31.geojson';
+const WASHINGTON_2022 = 'data/EV_Stations_Washington/washington_2022.01.31.geojson';
 
-const counties = 'data/Choropleth_boundaries/washington-state-counties_.geojson';
-const zip_codes = 'data/Choropleth_boundaries/washington-zip-codes-_1617.geojson';
-const census_data_2018 = 'data/census_data/census_2018redo.json';
-const census_data_2022 = 'data/census_data/census_2022redo.json';
+const ZIP_CODES = 'data/Choropleth_boundaries/washington-zip-codes-_1617.geojson';
+const CENSUS_2018_PATH = 'data/census_data/census_2018redo.json';
+const CENSUS_2022_PATH = 'data/census_data/census_2022redo.json';
 
-const us_center = [38.5, -96.5];        // zoom level 5
-const wash_center = [47.3, -120.8];     // zoom level 7.5
+d3.json(WASHINGTON_2018).then(function(data_2018) {
+    d3.json(WASHINGTON_2022).then(function(data_2022) {
+        d3.json(ZIP_CODES).then(function(zip_data){
+            d3.json(CENSUS_2018_PATH).then(function(census_data_2018){
+                d3.json(CENSUS_2022_PATH).then(function(census_data_2022){
 
-console.log("test script");
-
-d3.json(washington_2018).then( function(data_2018) {
-    d3.json(washington_2022).then( function(data_2022) {
-        d3.json(zip_codes).then( function(zip_data){
-            d3.json(census_data_2018).then( function(pop_data_2018){
-                d3.json(census_data_2022).then( function(pop_data_2022){
-                
-                console.log("test");
-                console.log(data_2018);
-
-                let pop_dict_2018 = {};
-                for (i = 0; i < pop_data_2018.data.length; i++){
-                    let zip = pop_data_2018.data[i];
-                    pop_dict_2018[zip[1]] = zip[2];
-                }
-
-                let pop_dict_2022 = {};
-                for (i = 0; i < pop_data_2022.data.length; i++){
-                    let zip = pop_data_2022.data[i];
-                    pop_dict_2022[zip[1]] = zip[2];
-                }
+                let pop_dict_2018 = createPop_dict(census_data_2018)
+                let pop_dict_2022 = createPop_dict(census_data_2022);
 
                 for (i = 0; i < zip_data.features.length; i++){
                     let wash_zip = zip_data.features[i].properties.ZCTA5CE10;
@@ -50,24 +29,29 @@ d3.json(washington_2018).then( function(data_2018) {
     });
 });
 
+function createPop_dict (census_data){
+    let pop_dict = {};
+    for (i = 0; i < census_data.data.length; i++){
+        let zip = census_data.data[i];
+        pop_dict[zip[1]] = zip[2];
+    }
+    return pop_dict;
+}
+
 function addStations(data, marker_color, marker_type){
-    console.log(data.features.length)
-    console.log(data.features[0]);
+    // Using filter to only use current stations (avaialble and unavaiable), removing planned (Future) stations
+    // and removing any stations without coordinate data
+    let stations= data.features.filter(station => station.properties.status_code !== 'P' && 
+    station.geometry.coordinates[0] !== null);
 
-    // Using filter to only use current stations (avaialble and unavaiable) and any stations without coordinate data
-    let subset= data.features.filter(station => station.properties.status_code !== 'P' && station.geometry.coordinates[0] !== null);
-    console.log('subset:', subset);
-
-    let stations = L.geoJSON(subset, {
+    let stations_layer = L.geoJSON(stations, {
         pointToLayer: createCircleMarker,
         onEachFeature: on_each_feature
         });
 
     function createCircleMarker(feature, latlng) {
     return L.circleMarker(latlng, {
-        //radius: total_ports(feature.properties) * 2,
         radius: Math.sqrt(total_ports(feature.properties)) * 4,
-        //radius: 10,
         fillColor: marker_color,
         color: "#000", 
         weight: .5,
@@ -77,11 +61,9 @@ function addStations(data, marker_color, marker_type){
 
     function on_each_feature(feature, layer) {
         let station = feature.properties;
-        //let ports = station.ev_dc_fast_num + station.ev_level1_evse_num + station.ev_level2_evse_num;
         layer.bindPopup(`<h3>${station.station_name}</h3><hr>`+
         `<p> EV Network: ${station.ev_network}</p>`+
         `<p> Total Ports: ${total_ports(station)}</p>`+
-        //`<p> Station Status: ${station.status_code}</p>`+
         `<p> Num. Level 1 Ports: ${station.ev_level1_evse_num}</p>`+
         `<p> Num. Level 2 Ports: ${station.ev_level2_evse_num}</p>`+
         `<p> Num. DC Fast Ports: ${station.ev_dc_fast_num}</p>`+
@@ -92,11 +74,11 @@ function addStations(data, marker_color, marker_type){
     return station.ev_dc_fast_num + station.ev_level1_evse_num + station.ev_level2_evse_num;
     }
 
-    let cluster = L.markerClusterGroup();
-    stations.addTo(cluster)
+    let cluster_layer = L.markerClusterGroup();
+    stations_layer.addTo(cluster_layer)
 
     // returning either marker layer or markerclustergroup layer based on condition
-    return marker_type == 'marker' ? stations : cluster;
+    return marker_type == 'marker' ? stations_layer : cluster_layer;
 }
 function createMap(data_2018, data_2022, zip_data){
     // Create the tile layer (background) for map
@@ -104,24 +86,24 @@ function createMap(data_2018, data_2022, zip_data){
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     })
 
-
     // Create a baseMaps object to hold the lightmap layer.
     let baseMaps = {
-        "Gray Scale": base
+        "Street Layer": base
     };
 
     let markers_2018 = addStations(data_2018, 'red', 'marker');
     let markers_2022 = addStations(data_2022, 'blue', 'marker');
     let cluster_2018 = addStations(data_2018, 'red', 'cluster');
     let cluster_2022 = addStations(data_2022, 'blue', 'cluster');
+    
     let zip_pop_2018 = L.geoJSON(zip_data,{ 
          style: function (feature){
              return style_zip(feature.properties.population_2018)},
-        //style: style_zip2,
         attribution: '&copy; <a href="https://cartographyvectors.com/map/1617-washington-zip-codes">Cartographyvectors</a> contributors',
         onEachFeature: function (feature, layer){
             return on_each_feature_zip(feature, layer, feature.properties.population_2018, '2018')}
         });
+    
     let zip_pop_2022 = L.geoJSON(zip_data,{ 
         style: function (feature){
             return style_zip(feature.properties.population_2022)},
@@ -140,6 +122,9 @@ function createMap(data_2018, data_2022, zip_data){
         "EV Stations Cluster (2022)" : cluster_2022
     };
 
+    // set coordinates for approx. center of washington
+    let wash_center = [47.3, -120.8];     // zoom level 7.5
+    
     // Create the map object with options.
     let myMap = L.map("map", {
     center: wash_center,
@@ -151,13 +136,7 @@ function createMap(data_2018, data_2022, zip_data){
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
     L.control.layers(null, overlayMaps).addTo(myMap);
 
-    L.control.scale({maxWidth: 150}).addTo(myMap);
-
-    function on_each_feature_zip(feature, layer,feature_pop, year ) {
-        let pop = 
-        layer.bindPopup(`<h3>Zip Code: ${feature.properties.ZCTA5CE10}<hr>`+
-        `<h4>${year} Population: ${feature_pop}</h4>`);
-    }   
+    L.control.scale({maxWidth: 150}).addTo(myMap); 
 }
 
 function getColor(d) {
@@ -171,25 +150,17 @@ function getColor(d) {
                          '#FFEDA0';
 }
 
-
 function style_zip(feature_pop) {
     return {
         fillColor: getColor(feature_pop),
         weight: .5,
         opacity: 1,
         color: 'black',
-        //dashArray: '3',
         fillOpacity: 0.7
     };
 }
 
-function style_zip2(feature) {
-    return {
-        fillColor: getColor(feature.properties.population_2018),
-        weight: 2,
-        opacity: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7
-    };
-}
+function on_each_feature_zip(feature, layer,feature_pop, year ) {
+    layer.bindPopup(`<h3>Zip Code: ${feature.properties.ZCTA5CE10}<hr>`+
+    `<h4>${year} Population: ${feature_pop}</h4>`);
+}  
