@@ -154,6 +154,7 @@ function createMap(data_2018, data_2022, zip_data){
     L.control.scale().addTo(myMap);
 
     function on_each_feature_zip(feature, layer,feature_pop, year ) {
+        let pop = 
         layer.bindPopup(`<h3>Zip Code: ${feature.properties.ZCTA5CE10}<hr>`+
         `<h4>${year} Population: ${feature_pop}</h4>`);
     }   
