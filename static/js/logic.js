@@ -110,7 +110,42 @@ function createMap(data_2018, data_2022, zip_data){
     console.log('Northeast:', myMap.getBounds().getNorthEast().toString());
 
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
-    L.control.layers(baseMaps, overlayMaps).addTo(myMap);
+    //L.control.layers(baseMaps, overlayMaps).addTo(myMap);
+    
+    let groupedOverlays = {
+        "2018": {
+          "Population by Zip": zip_pop_2018,
+          "EV Stations Markers": markers_2018,
+          "EV Stations Cluster": cluster_2018
+        },
+        "2022": {
+            "Population by Zip": zip_pop_2022,
+            "EV Stations Markers": markers_2022,
+            "EV Stations Cluster": cluster_2022
+          }
+      };
+      
+      let groupedOverlays2 = {
+        "2018- All Stations": {
+          "Population by Zip": zip_pop_2018,
+          "EV Stations Markers": markers_2018,
+        },
+        "2022- All Stations": {
+            "Population by Zip": zip_pop_2022,
+            "EV Stations Markers": markers_2022,
+          },
+        "Cluster View": {
+            "2018 EV Stations": cluster_2018,
+            "2022 EV Stations": cluster_2022
+          }
+      };
+
+      let options = {
+        groupCheckboxes: true,
+        exclusiveGroups: ["Cluster View"]
+      };
+
+      L.control.groupedLayers(baseMaps, groupedOverlays2,options).addTo(myMap);
 
     // create scale and add to map
     L.control.scale({maxWidth: 150}).addTo(myMap); 
