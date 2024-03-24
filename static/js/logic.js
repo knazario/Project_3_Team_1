@@ -115,61 +115,61 @@ function createMap(data_2018, data_2022, zip_data){
     // create scale and add to map
     L.control.scale({maxWidth: 150}).addTo(myMap); 
 
-    // create a legend control object
-    var legend = L.control({position: 'bottomright'});
-    // create div for legend and provide values when added to map
-    legend.onAdd = function (map) {
-        var div = L.DomUtil.create('div', 'info legend'),
-        population = [0, 2000, 5000, 20000, 30000, 50000, 90000,100000],
-            labels = [];
-        // add legend title
-        div.innerHTML = '<h4> Population</h4>';
-        // loop through our population intervals and generate a label with a colored square for each interval
-        for (var i = 0; i < population.length; i++) {
-            div.innerHTML +=
-                '<i style="background:' + getColor(population[i] + 1) + '"></i> ' +
-                population[i] + (population[i + 1] ? '&ndash;' + population[i + 1] + '<br>' : '+');
-        }
+    // // create a legend control object
+    // var legend = L.control({position: 'bottomright'});
+    // // create div for legend and provide values when added to map
+    // legend.onAdd = function (map) {
+    //     var div = L.DomUtil.create('div', 'info legend'),
+    //     population = [0, 2000, 5000, 20000, 30000, 50000, 90000,100000],
+    //         labels = [];
+    //     // add legend title
+    //     div.innerHTML = '<h4> Population</h4>';
+    //     // loop through our population intervals and generate a label with a colored square for each interval
+    //     for (var i = 0; i < population.length; i++) {
+    //         div.innerHTML +=
+    //             '<i style="background:' + getColor(population[i] + 1) + '"></i> ' +
+    //             population[i] + (population[i + 1] ? '&ndash;' + population[i + 1] + '<br>' : '+');
+    //     }
 
-        return div; //returning div to be placed on map
-    };
+    //     return div; //returning div to be placed on map
+    // };
 
-    legend.addTo(myMap);    // add legend to map
+    // legend.addTo(myMap);    // add legend to map
 }
 
-// // Create a legend providing context for map data
-// function createLegend(myMap){    
-//     var legend = L.control({position: 'bottomright'});
+// Create a legend providing context for map data
+function createLegend(myMap){    
+    var legend = L.control({position: 'bottomright'});
 
-//     legend.onAdd = function() {
-//         var div = L.DomUtil.create("div", "pop-legend");
-//         div.innerHTML += "<h4>Population by Zip Code</h4>";
-//         div.innerHTML += '<i style="background: #00FF00"></i><span>0 - 1K</span><br>';
-//         div.innerHTML += '<i style="background: #477AC2"></i><span>1K - 5K</span><br>';
-//         div.innerHTML += '<i style="background: #87BD7B"></i><span>5K - 25K</span><br>';
-//         div.innerHTML += '<i style="background: #00E700"></i><span>25K - 30K</span><br>';
-//         div.innerHTML += '<i style="background: #B9BAB9"></i><span>30K - 35K</span><br>';
-//         div.innerHTML += '<i style="background: #878987"></i><span>35K - 40K</span><br>';
-//         div.innerHTML += '<i style="background: #737373"></i><span>40K - 50K</span><br>';
-//         div.innerHTML += '<i style="background: #111111"></i><span>50K+</span><br>';
+    legend.onAdd = function() {
+        var div = L.DomUtil.create("div", "pop-legend");
+        div.innerHTML += "<h4>Population by Zip Code</h4>";
+        div.innerHTML += '<i style="background: #00FF00"></i><span>0 - 1K</span><br>';
+        div.innerHTML += '<i style="background: #477AC2"></i><span>1K - 5K</span><br>';
+        div.innerHTML += '<i style="background: #87BD7B"></i><span>5K - 25K</span><br>';
+        div.innerHTML += '<i style="background: #00E700"></i><span>25K - 30K</span><br>';
+        div.innerHTML += '<i style="background: #B9BAB9"></i><span>30K - 35K</span><br>';
+        div.innerHTML += '<i style="background: #878987"></i><span>35K - 40K</span><br>';
+        div.innerHTML += '<i style="background: #737373"></i><span>40K - 50K</span><br>';
+        div.innerHTML += '<i style="background: #111111"></i><span>50K+</span><br>';
 
 
-// // legend.onAdd = function () {
-// //     var div = L.DomUtil.create('div', 'pop-legend'),
-// //         pops = [0, 1000, 5000, 25000, 30000, 35000, 40000, 50000],
-// //         labels = [];
+// legend.onAdd = function () {
+//     var div = L.DomUtil.create('div', 'pop-legend'),
+//         pops = [0, 1000, 5000, 25000, 30000, 35000, 40000, 50000],
+//         labels = [];
 
-// //     // loop through our population intervals and generate a label with a colored square for each interval
-// //     for (var i = 0; i < pops.length; i++) {
-// //         div.innerHTML +=
-// //             '<i style="background:' + getColor(pops[i] + 1) + '"></i> ' +
-// //             pops[i] + (pops[i + 1] ? '&ndash;' + pops[i + 1] + '<br>' : '+');
+//     // loop through our population intervals and generate a label with a colored square for each interval
+//     for (var i = 0; i < pops.length; i++) {
+//         div.innerHTML +=
+//             '<i style="background:' + getColor(pops[i] + 1) + '"></i> ' +
+//             pops[i] + (pops[i + 1] ? '&ndash;' + pops[i + 1] + '<br>' : '+');
 
-//         return div;
-//     };
-//     legend.addTo(myMap);
-// }
-// createLegend(myMap);
+        return div;
+    };
+    legend.addTo(myMap);
+}
+createLegend(myMap);
 
 // function receives geojson, marker color and type (marker vs cluster) and creates/returns leaflet overlay layer
 function addStations(data, marker_color, marker_type){
