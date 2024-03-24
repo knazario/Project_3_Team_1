@@ -2,7 +2,7 @@
 const WASHINGTON_2018 = 'data/EV_Stations_Washington/washington_2018.01.31.geojson';
 const WASHINGTON_2022 = 'data/EV_Stations_Washington/washington_2022.01.31.geojson';
 
-const ZIP_CODES = 'data/Choropleth_boundaries/washington-zip-codes-_1617.geojson';
+const ZIP_CODES = 'data/Choropleth_boundaries/washington-zip-codes.geojson';
 const CENSUS_2018_PATH = 'data/census_data/census_2018redo.json';
 const CENSUS_2022_PATH = 'data/census_data/census_2022redo.json';
 
