@@ -1,22 +1,55 @@
+html, 
+body{
+  height: 100%;
+}
+
 body {
   padding: 0;
   margin: 0;
 }
 
+#container{
+  height: 100%;
+  display:flex;
+}
+
+#sidebar{
+  flex:1;
+  height:100%;
+  width:200px;
+  float: left;
+  background-color: #777;
+  color:aliceblue;
+
+}
+
+#sidebar p {
+  display:block;
+  margin-top: 10px;
+  margin-bottom:50px;
+  text-align:center;
+  font-size:1.3em;
+}
+
+#sidebar a:active, a:visited {
+  color: white; /* Change to the desired color */
+}
+
+#sidebar h2{
+  margin: 10 10px;
+  text-align:center;
+}
+
+#map-container{
+  display: flex;
+  width: calc(100% - 200px);
+  height:100%;
+}
+
 #map1, #map2 {
   flex: 1; 
-  height: 100vh; 
+  height: 100%; 
   margin-right: 5px; 
-}
-
-#container{
-  display: flex;
-  width: 100%;
-}
-
-html, 
-body{
-  height: 100%;
 }
 
 /*Population Legend Info*/
