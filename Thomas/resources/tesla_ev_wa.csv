@@ -1,0 +1,174 @@
+Fuel Type Code,Station Name,Street Address,City,State,ZIP,Groups With Access Code,Access Days Time,EV Network,Facility Type,EV Pricing,Geocode Status,Latitude,Longitude,Status Code
+ELEC,"Aberdeen, WA - Tesla Supercharger",416 Wishkah Street,Aberdeen,WA,98520,Public,24 hours daily,Tesla,,,GPS,46.976679,-123.813485,E
+ELEC,Angel of the Winds Casino - Tesla Supercharger,3438 Stoluckquamish Lane,Arlington,WA,98223,Public,24 hours daily,Tesla,OTHER_ENTERTAINMENT,,GPS,48.212441,-122.183491,E
+ELEC,Fairfield Inn & Suites Burlington - Tesla Supercharger,9384 Old Highway 99 North,Burlington,WA,98233,Public,24 hours daily,Tesla,,,200-8,48.509743,-122.338681,E
+ELEC,Centralia Outlets - Tesla Supercharger,1200 Lum Rd,Centralia,WA,98531,Public,24 hours daily,Tesla,,,200-9,46.729872,-122.977392,E
+ELEC,Holiday Inn Express - Tesla Supercharger,1620 Canyon Rd,Ellensburg,WA,98926,Public,24 hours daily,Tesla,,,GPS,46.976918,-120.54162,E
+ELEC,Fred Meyer - Tesla Supercharger,2811 West 10th Ave.,Kennewick,WA,99336,Public,24 hours daily,Tesla,,,200-9,46.198035,-119.162687,E
+ELEC,Fred Meyer - Tesla Supercharger,2902 164th Street SW,Lynnwood,WA,98087,Public,24 hours daily,Tesla,,,200-9,47.846714,-122.271389,E
+ELEC,Best Western Plus Bronco Inn - Tesla Supercharger,105 W Galbreath Way,Ritzville,WA,99169,Public,24 hours daily,Tesla,,,200-9,47.116294,-118.368328,E
+ELEC,Holiday Inn Express & Suites - Tesla Supercharger,1441 E Washington Street,Sequim,WA,98382,Public,24 hours daily,Tesla,,,200-9,48.071064,-123.074581,E
+ELEC,Fred Meyer Salmon Creek - Tesla Supercharger,800 NE Tenney Road,Vancouver,WA,98685,Public,24 hours daily,Tesla,,,200-9,45.721613,-122.663762,E
+ELEC,Dan's Food Market - Tesla Supercharger,1329 US-2,Leavenworth,WA,98826,Public,24 hours daily,Tesla,GROCERY,,200-9,47.598476,-120.656055,E
+ELEC,Fred Meyer - Tesla Supercharger,6100 East Lake Sammamish Parkway SE,Issaquah,WA,98029,Public,24 hours daily,Tesla,GROCERY,,GPS,47.548081,-122.039955,E
+ELEC,Angel of the Winds Casino - Tesla Destination,3438 Stoluckquamish Ln,Arlington,WA,98223,Public,,Tesla Destination,OTHER_ENTERTAINMENT,Free,200-9,48.214249,-122.184142,E
+ELEC,Alexander's Lodge & Restaurant - Tesla Destination,37515 SR 706 E,Ashford,WA,98304,Public,,Tesla Destination,HOTEL,Free,200-9,46.751382,-121.937189,E
+ELEC,Courtyard by Marriott Seattle Bellevue/Downtown - Tesla Destination,11010 NE 8th St,Bellevue,WA,98004,Public,,Tesla Destination,HOTEL,Free,200-9,47.617601,-122.193492,E
+ELEC,Marriott Bellevue - Tesla Destination,200 110th Ave,Bellevue,WA,98004,Public,,Tesla Destination,HOTEL,Free,200-9,47.611844,-122.193618,E
+ELEC,Marriott AC Bellevue - Tesla Destination,208 106th Pl NE,Bellevue,WA,98004,Public,,Tesla Destination,HOTEL,Free,200-8,47.612345,-122.197702,E
+ELEC,Hilton Bellevue - Tesla Destination,300 112th Ave SE,Bellevue,WA,98004,Public,,Tesla Destination,HOTEL,Free,200-8,47.607592,-122.189582,E
+ELEC,Hotel Bellwether - Tesla Destination,1 Bellwether Way,Bellingham,WA,98225,Public,,Tesla Destination,HOTEL,Free,200-9,48.754197,-122.496675,E
+ELEC,Best Western Plus Heritage Inn - Tesla Destination,151 McLeod Rd,Bellingham,WA,98226,Public,,Tesla Destination,HOTEL,Free,GPS,48.783141,-122.484001,E
+ELEC,Oxford Suites Bellingham - Tesla Destination,4051 Meridian St,Bellingham,WA,98226,Public,,Tesla Destination,HOTEL,Free,200-9,48.788325,-122.48746,E
+ELEC,Hamilton Cellars - Tesla Destination,55410 N Sunset Rd,Benton City,WA,99320,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-8,46.2960713,-119.4514867,E
+ELEC,Semiahmoo Resort & Spa - Tesla Destination,9565 Semiahmoo Pkwy,Blaine,WA,98230,Public,,Tesla Destination,HOTEL,Free,200-9,48.990486,-122.774447,E
+ELEC,Carson Ridge Luxury Cabins - Tesla Destination,1261 Wind River Rd,Carson,WA,98610,Public,,Tesla Destination,HOTEL,Free,200-9,45.729538,-121.821066,E
+ELEC,Hotel Cathlamet - Tesla Destination,69 Main St,Cathlamet,WA,98612,Public,,Tesla Destination,HOTEL,Free,200-9,46.202588,-123.384133,E
+ELEC,Fielding Hills Winery - Tesla Destination,565 S Lakeshore Dr,Chelan,WA,98816,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-9,47.842476,-120.098099,E
+ELEC,Suncadia Resort - Tesla Destination,3600 Suncadia Trl,Cle Elum,WA,98922,Public,,Tesla Destination,HOTEL,Free,200-9,47.207984,-121.019499,E
+ELEC,The Four Points by Sheraton Seattle Airport South - Tesla Destination,22406 Pacific Highway S,Des Moines,WA,98198,Public,,Tesla Destination,HOTEL,Free,200-9,47.400629,-122.296834,E
+ELEC,Best Western Plus Evergreen Inn & Suites - Tesla Destination,32124 25th Ave S,Federal Way,WA,98003,Public,,Tesla Destination,HOTEL,Free,200-9,47.313799,-122.301009,E
+ELEC,Quillayute River Resort - Tesla Destination,473 Mora Rd,Forks,WA,98331,Public,,Tesla Destination,HOTEL,Free,200-9,47.914774,-124.544249,E
+ELEC,Island Athletic Club - Tesla Destination,5511 S Freeland Ave,Freeland,WA,98249,Public,,Tesla Destination,REC_SPORTS_FACILITY,Free,200-9,48.010539,-122.534798,E
+ELEC,Ocean5 - Tesla Destination,5268 Point Fosdick Dr NW,Gig Harbor,WA,98335,Public,,Tesla Destination,OTHER_ENTERTAINMENT,Free,GPS,47.305772,-122.579191,E
+ELEC,Best Western Wesley Inn - Tesla Destination,6575 Kimball Dr,Gig Harbor,WA,98335,Public,,Tesla Destination,HOTEL,Free,200-9,47.3183909,-122.5853265,E
+ELEC,Holiday Inn Seattle-Issaquah - Tesla Destination,1801 12th Ave NW,Issaquah,WA,98027,Public,,Tesla Destination,HOTEL,Free,200-9,47.550984,-122.057823,E
+ELEC,Badger Mountain Vineyard & Powers Winery - Tesla Destination,1106 N Jurupa St,Kennewick,WA,99338,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-9,46.213187,-119.286497,E
+ELEC,Hampton Inn Kennewick at Southridge - Tesla Destination,3715 Plaza Wy,Kennewick,WA,99338,Public,,Tesla Destination,HOTEL,Free,200-9,46.178019,-119.189427,E
+ELEC,Saratoga Inn - Tesla Destination,201 Cascade Ave,Langley,WA,98260,Public,,Tesla Destination,INN,Free,200-9,48.0396068,-122.4061314,E
+ELEC,The Inn at Langley - Tesla Destination,400 1st St.,Langley,WA,98260,Public,,Tesla Destination,INN,Free,200-9,48.041105,-122.410772,E
+ELEC,Mountain Springs Lodge - Tesla Destination,19115 Chiwawa Loop Rd,Leavenworth,WA,98826,Public,,Tesla Destination,HOTEL,Free,200-9,47.767473,-120.653187,E
+ELEC,Sleeping Lady Mountain Resort - Tesla Destination,7375 Icicle Rd,Leavenworth,WA,98826,Public,,Tesla Destination,HOTEL,Free,200-9,47.551769,-120.680327,E
+ELEC,Alta Cellars - Tesla Destination,135 Wapato Wy,Manson,WA,98831,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-8,47.884887,-120.156959,E
+ELEC,Hard Row to Hoe Vineyards - Tesla Destination,300 Ivan Morse Rd,Manson,WA,98831,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-9,47.896557,-120.132386,E
+ELEC,Moonstone Beach Motel - Tesla Destination,4849 Pacific Ave,Moclips,WA,98562,Public,,Tesla Destination,HOTEL,Free,200-8,47.240392,-124.217215,E
+ELEC,Fairfield Inn & Suites by Marriott Moses Lake - Tesla Destination,2380 S Maiers Rd,Moses Lake,WA,98837,Public,,Tesla Destination,HOTEL,Free,200-9,47.10335,-119.251036,E
+ELEC,Adytum Sanctuary - Tesla Destination,186 Skyview Dr,Mossyrock,WA,98564,Public,,Tesla Destination,HOTEL,Free,200-9,46.545331,-122.508967,E
+ELEC,Hobuck Beach  Resort - Tesla Destination,2726 Makah Passage,Neah Bay,WA,98357,Public,,Tesla Destination,HOTEL,Free,GPS,48.340723,-124.662924,E
+ELEC,Hobuck Beach Resort  RV Camping - Tesla Destination,3346 Makah Passage,Neah Bay,WA,98357,Public,,Tesla Destination,HOTEL,Free,GPS,48.3334791,-124.6593683,E
+ELEC,Swantown Inn & Spa - Tesla Destination,1431 11th Ave SE,Olympia,WA,98501,Public,,Tesla Destination,INN,Free,200-9,47.03909,-122.882327,E
+ELEC,Hotel RL by Red Lion - Tesla Destination,2300 Evergreen Park Dr SW,Olympia,WA,98502,Public,,Tesla Destination,HOTEL,Free,200-9,47.027278,-122.912415,E
+ELEC,Veranda Beach Resort - Tesla Destination,299 Eastlake Rd,Oroville,WA,98844,Public,,Tesla Destination,HOTEL,Free,200-9,48.987053,-119.425912,E
+ELEC,Red Lion Hotel Pasco - Tesla Destination,2525 North 20th Ave,Pasco,WA,99301,Public,,Tesla Destination,HOTEL,Free,200-8,46.250235,-119.116144,E
+ELEC,Camaraderie Cellars - Tesla Destination,334 Benson Rd,Port Angeles,WA,98363,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-9,48.101579,-123.477119,E
+ELEC,Colette's Bed and Breakfast - Tesla Destination,339 Finn Hall Rd,Port Angeles,WA,98362,Public,,Tesla Destination,B_AND_B,Free,200-9,48.1149208,-123.2683981,E
+ELEC,"George Washington Inn, a Select Registry Property - Tesla Destination",939 Finn Hall Rd,Port Angeles,WA,98362,Public,,Tesla Destination,INN,Free,200-9,48.116414,-123.255357,E
+ELEC,Holiday Inn Express Pullman - Tesla Destination,1190 SE Bishop Blvd,Pullman,WA,99163,Public,,Tesla Destination,HOTEL,Free,200-8,46.715837,-117.166626,E
+ELEC,Hampton Inn and Suites Puyallup - Tesla Destination,1515 S Meridian,Puyallup,WA,98371,Public,,Tesla Destination,HOTEL,Free,200-9,47.17669,-122.2931,E
+ELEC,Cave B Estate Winery & Resort - Tesla Destination,344 Silica Rd NW,Quincy,WA,98848,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-9,47.098792,-119.996204,E
+ELEC,Seattle Marriott Redmond - Tesla Destination,7401 164th Ave NE,Redmond,WA,98052,Public,,Tesla Destination,HOTEL,Free,200-8,47.671225,-122.122192,E
+ELEC,Homewood Suites Richland - Tesla Destination,1060 George Washington Wy,Richland,WA,99352,Public,,Tesla Destination,HOTEL,Free,200-9,46.281294,-119.273452,E
+ELEC,Hampton Inn Richland/Tri-Cities - Tesla Destination,486 Bradley Blvd,Richland,WA,99352,Public,,Tesla Destination,HOTEL,Free,200-8,46.271849,-119.269167,E
+ELEC,Thompson Seattle - Tesla Destination,100 Stewart St,Seattle,WA,98101,Public,,Tesla Destination,HOTEL,Free,200-8,47.610335,-122.341261,E
+ELEC,Hotel 1000 - Tesla Destination,1000 1st Ave,Seattle,WA,98104,Public,,Tesla Destination,HOTEL,Free,200-9,47.6049041,-122.3361893,E
+ELEC,Motif Seattle - Tesla Destination,1415 5th Ave,Seattle,WA,98101,Public,,Tesla Destination,HOTEL,Free,200-9,47.610166,-122.335179,E
+ELEC,Hotel Theodore - Tesla Destination,1531 7th Ave,Seattle,WA,98101,Public,,Tesla Destination,HOTEL,Free,200-9,47.612347,-122.334168,E
+ELEC,Cedarbrook Lodge - Tesla Destination,18525 36th Ave S,Seattle,WA,98188,Public,,Tesla Destination,HOTEL,Free,200-9,47.4373126,-122.2876227,E
+ELEC,Seattle Marriott Waterfront - Tesla Destination,2100 Alaskan Way,Seattle,WA,98121,Public,,Tesla Destination,HOTEL,Free,200-9,47.610845,-122.347258,E
+ELEC,Bedrooms & More - Tesla Destination,324 NE 45th St,Seattle,WA,98105,Public,,Tesla Destination,SHOPPING_CENTER,Free,200-9,47.661523,-122.324913,E
+ELEC,400 Fairview - Tesla Destination,400 Fairview Ave N,Seattle,WA,98109,Public,,Tesla Destination,OFFICE_BLDG,Free,200-9,47.622544,-122.333913,E
+ELEC,The Fairmont Olympic Hotel - Tesla Destination,411 University St,Seattle,WA,98101,Public,,Tesla Destination,HOTEL,Free,200-8,47.608043,-122.334072,E
+ELEC,Residence Inn by Marriott Seattle University Distric - Tesla Destination,4501 12th Ave NE,Seattle,WA,98105,Public,,Tesla Destination,HOTEL,Free,200-9,47.661869,-122.315415,E
+ELEC,Hampton Inn and Suites Seattle-Downtown - Tesla Destination,500 5th Ave N,Seattle,WA,98109,Public,,Tesla Destination,HOTEL,Free,200-9,47.625675,-122.346886,E
+ELEC,Four Points by Sheraton Downtown Seattle Center - Tesla Destination,601 Roy St,Seattle,WA,98109,Public,,Tesla Destination,HOTEL,Free,200-9,47.625378,-122.344596,E
+ELEC,Hotel Max - Tesla Destination,620 Stewart St,Seattle,WA,98101,Public,,Tesla Destination,HOTEL,Free,200-9,47.614141,-122.336357,E
+ELEC,Shafer Baillie Mansion Bed & Breakfast - Tesla Destination,907 14th Ave E,Seattle,WA,98112,Public,,Tesla Destination,B_AND_B,Free,200-9,47.6270468,-122.3149606,E
+ELEC,Four Seasons Hotel Seattle - Tesla Destination,99 Union St,Seattle,WA,98101,Public,,Tesla Destination,HOTEL,Free,200-9,47.607651,-122.339418,E
+ELEC,Shelburne Inn Restaurant & Pub - Tesla Destination,4415 Pacific Way,Seaview,WA,98644,Public,,Tesla Destination,HOTEL,Free,200-9,46.3348553,-124.0550737,E
+ELEC,Lost Mountain Lodge - Tesla Destination,303 Sunny View Dr,Sequim,WA,98382,Public,,Tesla Destination,HOTEL,Free,200-9,48.06217,-123.168319,E
+ELEC,GreenHouse Inn by the Bay - Tesla Destination,630 Marine Dr,Sequim,WA,98382,Public,,Tesla Destination,INN,Free,200-9,48.149618,-123.153648,E
+ELEC,Snoqualmie Casino - Tesla Destination,37500 SE N Bend Wy,Snoqualmie,WA,98065,Public,,Tesla Destination,OTHER_ENTERTAINMENT,Free,200-9,47.51865,-121.841773,E
+ELEC,The Davenport Hotel - Tesla Destination,10 S Post St,Spokane,WA,99201,Public,,Tesla Destination,HOTEL,Free,200-9,47.656578,-117.424414,E
+ELEC,The Davenport Tower - Tesla Destination,111 Post St,Spokane,WA,99201,Public,,Tesla Destination,HOTEL,Free,200-9,47.656306,-117.423487,E
+ELEC,Oxford Suites Spokane - Tesla Destination,115 W North River Dr,Spokane,WA,99201,Public,,Tesla Destination,HOTEL,Free,200-9,47.663559,-117.412422,E
+ELEC,Hampton Inn Airport Spokane - Tesla Destination,2010 S Assembly Rd,Spokane,WA,99224,Public,,Tesla Destination,HOTEL,Free,200-8,47.63666,-117.477532,E
+ELEC,DoubleTree by Hilton Spokane City Center - Tesla Destination,322 N Spokane Falls Ct,Spokane,WA,99201,Public,,Tesla Destination,HOTEL,Free,200-8,47.66075,-117.414533,E
+ELEC,The Davenport Grand Hotel - Tesla Destination,333 W Spokane Falls Blvd,Spokane,WA,99201,Public,,Tesla Destination,HOTEL,Free,200-9,47.659917,-117.417273,E
+ELEC,The Hotel Lusso - Tesla Destination,808 W Sprague Ave,Spokane,WA,99201,Public,,Tesla Destination,HOTEL,Free,200-9,47.657247,-117.423946,E
+ELEC,Hilton Garden Inn Spokane Airport - Tesla Destination,9015 W Hwy 2,Spokane,WA,99224,Public,,Tesla Destination,HOTEL,Free,200-8,47.642631,-117.537533,E
+ELEC,Oxford Suites Spokane Valley - Tesla Destination,15015 E Indiana Ave,Spokane Valley,WA,99216,Public,,Tesla Destination,HOTEL,Free,200-9,47.673676,-117.201827,E
+ELEC,Skamania Lodge - Tesla Destination,1131 Skamania Lodge Way,Stevenson,WA,98648,Public,,Tesla Destination,HOTEL,Free,GPS,45.6856217,-121.9052444,E
+ELEC,Best Western Plus Tacoma Dome Hotel - Tesla Destination,2611 East E St,Tacoma,WA,98421,Public,,Tesla Destination,HOTEL,Free,200-9,47.23853,-122.427213,E
+ELEC,Alderbrook Resort & Spa - Tesla Destination,10 E Alderbrook Dr,Union,WA,98592,Public,,Tesla Destination,HOTEL,Free,200-9,47.3471843,-123.0676404,E
+ELEC,Heathman Lodge - Tesla Destination,7801 NE Greenwood Dr,Vancouver,WA,98662,Public,,Tesla Destination,HOTEL,Free,200-9,45.653804,-122.591975,E
+ELEC,Dunham Wine Cellars - Tesla Destination,150 E Boeing,Walla Walla,WA,99362,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-8,46.0890194,-118.2782343,E
+ELEC,Pepper Bridge Winery - Tesla Destination,1704 J.B. George Rd,Walla Walla,WA,99362,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-9,47.734002,-122.141347,E
+ELEC,Inn at Abeja - Tesla Destination,2014 Mill Creek Rd,Walla Walla,WA,99362,Public,,Tesla Destination,INN,Free,200-9,46.088478,-118.227154,E
+ELEC,Amavi Cellars - Tesla Destination,3796 Peppers Bridge Rd,Walla Walla,WA,99362,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-9,46.016223,-118.38607,E
+ELEC,Marcus Whitman Hotel - Tesla Destination,6 W Rose St,Walla Walla,WA,99362,Public,,Tesla Destination,HOTEL,Free,200-9,46.0679132,-118.3408991,E
+ELEC,Corvus Cellars - Tesla Destination,760 C St,Walla Walla,WA,99362,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-8,46.092016,-118.271808,E
+ELEC,Warm Springs Inn & Winery - Tesla Destination,1611 Love Ln,Wenatchee,WA,98801,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-9,47.476001,-120.376514,E
+ELEC,Cranberry Road Winery - Tesla Destination,2858 S Forrest St,Westport,WA,98595,Public,,Tesla Destination,BREWERY_DISTILLERY_WINERY,Free,200-9,46.859479,-124.108594,E
+ELEC,Sun Mountain Lodge - Tesla Destination,604 Patterson Lake Rd,Winthrop,WA,98862,Public,,Tesla Destination,HOTEL,Free,200-9,48.477487,-120.25638,E
+ELEC,Willows Lodge - Tesla Destination,14850 NE 145th St,Woodinville,WA,98072,Public,,Tesla Destination,HOTEL,Free,200-8,47.732864,-122.147196,E
+ELEC,Holiday Inn Downtown Yakima - Tesla Destination,802 E Yakima Ave,Yakima,WA,98901,Public,,Tesla Destination,HOTEL,Free,200-8,46.604039,-120.494574,E
+ELEC,Cle Elum Business Park - Tesla Supercharger,811 WA-970,Cle Elum,WA,98922,Public,24 hours daily,Tesla,OFFICE_BLDG,,200-9,47.189262,-120.902714,E
+ELEC,Fred Meyer - Tesla Supercharger,18805 US-2,Monroe,WA,98272,Public,24 hours daily,Tesla,,,200-9,47.862572,-121.976585,E
+ELEC,Blue Mountain Station - Tesla Destination,700 Artisan Wy,Dayton,WA,99328,Public,,Tesla Destination,,Free,GPS,46.31017,-117.99763,E
+ELEC,Washington Athletic Club Garage - Tesla Destination,1325 6th Ave,Seattle,WA,98101,Public,,Tesla Destination,,Free,200-9,47.609629,-122.333133,E
+ELEC,Hotel Interurban - Tesla Destination,223 Andover Park E,Tukwila,WA,98188,Public,,Tesla Destination,,Free,200-9,47.457152,-122.251628,E
+ELEC,Patterson Cellars - Tesla Destination,19501 144th Ave NE Suite D500,Woodinville,WA,98072,Public,,Tesla Destination,,Free,200-8,47.769459,-122.151217,E
+ELEC,Union Square - Tesla Supercharger,601 Union Street,Seattle,WA,98101,Public,6am-12am daily,Tesla,,,200-9,47.610024,-122.332078,E
+ELEC,The Outlet Collection - Tesla Supercharger,1101 Outlet Collection Way,Auburn,WA,98001,Public,24 hours daily,Tesla,SHOPPING_MALL,,GPS,47.29799,-122.248532,E
+ELEC,TA Petro - Tesla Supercharger,46600 SE North Bend Way,North Bend,WA,98045,Public,24 hours daily,Tesla,REST_STOP,,GPS,47.468033,-121.716442,E
+ELEC,Windermere Camano Island - Tesla Destination,818 N Sunrise Blvd,Camano,WA,98282,Public,,Tesla Destination,,Free,200-9,48.240444,-122.4555,E
+ELEC,"Seattle, WA - Union Street (Wall Connector) - Tesla Destination",601 Union St,Seattle,WA,98101,Public,,Tesla Destination,,Free,200-9,47.610142,-122.331887,E
+ELEC,Freehand Cellars - Tesla Destination,420 Windy Point Dr,Wapato,WA,98951,Public,,Tesla Destination,,Free,200-9,46.495156,-120.4206332,E
+ELEC,Doubleback Winery - Tesla Destination,3853 Powerline Rd,Walla Walla,WA,99362,Public,,Tesla Destination,,Free,200-9,46.014123,-118.310165,E
+ELEC,Majestic Inn & Spa - Tesla Destination,419 Commercial Ave,Anacortes,WA,98221,Public,,Tesla Destination,,Free,200-9,48.51854,-122.61215,E
+ELEC,Whitman College - Tesla Destination,345 Boyer Ave,Walla Walla,WA,99362,Public,,Tesla Destination,,Free,200-8,46.0684299,-118.3302973,E
+ELEC,A Room With a View - Tesla Destination,28 Roland Ct,Walla Walla,WA,99362,Public,,Tesla Destination,,Free,200-9,46.022244,-118.410638,E
+ELEC,TA Petro - Tesla Supercharger,10506 West Aero Road,Spokane,WA,99224,Public,24 hours daily,Tesla,SHOPPING_CENTER,,GPS,47.591,-117.56193,E
+ELEC,Lep Re Kon Harvest Foods - Tesla Supercharger,2709 West Broadway Avenue,Moses Lake,WA,98837,Public,24 hours daily,Tesla,SHOPPING_CENTER,,GPS,47.103514,-119.310208,E
+ELEC,Birch Bay Square - Tesla Supercharger,8115 Birch Bay Square,Blaine,WA,98230,Public,24 hours daily,Tesla,,,GPS,48.937845,-122.667679,E
+ELEC,Pilot Travel Center - Tesla Supercharger,2430 93rd Avenue Southwest,Tumwater,WA,98512,Public,24 hours daily,Tesla,TRUCK_STOP,,GPS,46.952938,-122.935249,E
+ELEC,Vancouver Mall - Tesla Supercharger,8700 NE Vancouver Mall Drive,Vancouver,WA,98662,Public,24 hours daily,Tesla,SHOPPING_MALL,,GPS,45.659583,-122.583536,E
+ELEC,Dew Drop Inn - Tesla Supercharger,100 Fern Hill Road,Forks,WA,98331,Public,24 hours daily,Tesla,INN,,GPS,47.942921,-124.385236,E
+ELEC,Panera Bread - Tesla Supercharger,207 Three Rivers Drive,Kelso,WA,98626,Public,24 hours daily,Tesla,RESTAURANT,,GPS,46.143261,-122.898533,E
+ELEC,Village at Beardslee Crossing - Tesla Supercharger,19128 112th Avenue NE,Bothell,WA,98011,Public,24 hours daily,Tesla,SHOPPING_MALL,,GPS,47.767687,-122.191482,E
+ELEC,Icicle Village Resort - Tesla Destination,505 Hwy 2,Leavenworth,WA,98826,Public,,Tesla Destination,HOTEL,Free,GPS,47.589123,-120.672887,E
+ELEC,Target - Tesla Supercharger,665 Sleater Kinney Road SE,Lacey,WA,98503,Public,24 hours daily,Tesla,SHOPPING_CENTER,,GPS,47.042158,-122.833946,E
+ELEC,Archer Hotel at Redmond Town Center - Tesla Destination,7200 164th Ave NE,Redmond,WA,98052,Public,,Tesla Destination,,Free,200-8,47.6804551,-122.1217694,E
+ELEC,La Quinta Inn & Suites Walla Walla - Tesla Destination,776 Silverstone Dr,Walla Walla,WA,99362,Public,,Tesla Destination,,Free,GPS,46.067886,-118.370851,E
+ELEC,Montgomery East Commercial Center - Tesla Destination,11616 E Montgomery Dr,Spokane Valley,WA,99206,Public,,Tesla Destination,,Free,200-9,47.677124,-117.249314,E
+ELEC,Paine Field Airport - Tesla Destination,3220 100th St SW,Everett,WA,98204,Public,,Tesla Destination,,Free,200-9,47.9074843,-122.2620127,E
+ELEC,The Ridge Motorsports Park - Tesla Destination,1060 W. Eells Hill Rd,Shelton,WA,98584,Public,,Tesla Destination,,Free,200-9,47.254252,-123.197171,E
+ELEC,2+U - Tesla Supercharger,1201 Second Avenue,Seattle,WA,98101,Public,24 hours daily,Tesla,PARKING_GARAGE,,GPS,47.606601,-122.337495,E
+ELEC,Ballard Blocks - Tesla Supercharger,1416 NW Ballard Way,Seattle,WA,98107,Public,24 hours daily,Tesla,PARKING_GARAGE,,GPS,47.662554,-122.37504,E
+ELEC,Shell Gas Station/BJ's - Tesla Supercharger,14579 US-97 Alt,Entiat,WA,98822,Public,24 hours daily,Tesla,CONVENIENCE_STORE,,GPS,47.684802,-120.206922,E
+ELEC,Venn@Main - Tesla Supercharger,10333 NE 1st Street,Bellevue,WA,98004,Public,7am-11pm daily,Tesla,PAY_GARAGE,,GPS,47.611048,-122.202181,E
+ELEC,Northgate Mall - Tesla Supercharger,401 NE Northgate Way,Seattle,WA,98125,Public,24 hours daily,Tesla,SHOPPING_MALL,,GPS,47.706589,-122.327778,E
+ELEC,Bob's Burgers & Brew - Tesla Supercharger,121 North Fair Avenue,Yakima,WA,98901,Public,24 hours daily,Tesla,HOTEL,,GPS,46.609653,-120.491932,E
+ELEC,Celebration Center - Tesla Supercharger,32015 Pacific Highway South,Federal Way,WA,98003,Public,24 hours daily,Tesla,SHOPPING_CENTER,,GPS,47.314888,-122.31487,E
+ELEC,Big B Truck Stop - Tesla Supercharger,2008  Durry Road,Sprague,WA,99032,Public,24 hours daily,Tesla,GAS_STATION,,GPS,47.209058,-118.22567,E
+ELEC,"Liberty Lake, WA - Tesla Supercharger",21728 E Mission Ave,Liberty Lake,WA,99019,Public,24 hours daily,Tesla,CAR_DEALER,,GPS,47.67381,-117.1130101,E
+ELEC,SureStay Hotel by Best Western - Tesla Supercharger,1500  Canyon Road,Ellensburg,WA,98926,Public,24 hours daily,Tesla,HOTEL,,GPS,46.977979,-120.542576,E
+ELEC,Southcenter Plaza - Tesla Supercharger,333 Strander Boulevard,Tukwila,WA,98188,Public,24 hours daily,Tesla,SHOPPING_CENTER,,GPS,47.455407,-122.256023,E
+ELEC,Shell Gas Station - Tesla Supercharger,16010  Road 1 Northwest,Quincy,WA,98848,Public,24 hours daily,Tesla,GAS_STATION,,GPS,47.103405,-119.83392,E
+ELEC,Sunrise Inn Villas & Suites - Tesla Destination,905  20th st,Anacortes,WA,98221,Public,,Tesla Destination,,Free,GPS,48.50598,-122.6117,E
+ELEC,Courtyard by Marriott Pasco Tri-Cities Airport - Tesla Destination,2011  West Argent Road,Pasco,WA,99301,Public,,Tesla Destination,,Free,GPS,46.25605,-119.11724,E
+ELEC,The Walls Vineyards - Tesla Destination,1015  W Pine St,Walla Walla,WA,99362,Public,,Tesla Destination,,Free,GPS,46.06881,-118.35589,E
+ELEC,Little Creek Casino Resort - Tesla Destination,93 WA-108,Shelton,WA,98584,Public,,Tesla Destination,,Free,GPS,47.12836,-123.10355,E
+ELEC,"Vancouver, WA - Northeast Fourth Plain Boulevard - Tesla Supercharger",6916 NE Fourth Plain Blvd,Vancouver,WA,98661,Public,24 hours daily,Tesla,PARKING_LOT,,GPS,45.645638,-122.601482,E
+ELEC,Home Depot - Tesla Supercharger,700 Northwest Arkansas Way,Chehalis,WA,98532,Public,24 hours daily,Tesla,PARKING_LOT,,GPS,46.679769,-122.976995,E
+ELEC,Target - Tesla Supercharger,405 SE Everett Mall Way,Everett,WA,98208,Public,24 hours daily,Tesla,SHOPPING_CENTER,,GPS,47.909318,-122.225827,E
+ELEC,Evergreen Shopping Center - Tesla Supercharger,5219  Tacoma Mall Boulevard,Tacoma,WA,98409,Public,24 hours daily,Tesla,SHOPPING_CENTER,,GPS,47.209605,-122.462678,E
+ELEC,Yokes Grocery - Tesla Supercharger,4905 North Road 68,Pasco,WA,99301,Public,24 hours daily,Tesla,GROCERY,,GPS,46.272432,-119.182453,E
+ELEC,IKEA - Tesla Supercharger,601 SW 41st St,Renton,WA,98057,Public,24 hours daily,Tesla,PARKING_LOT,,GPS,47.443065,-122.225152,E
+ELEC,Junction Park & Ride - Tesla Supercharger,125 N 65th Ave,Ridgefield,WA,98642,Public,24 hours daily,Tesla,PARKING_LOT,,GPS,45.817752,-122.682883,E
+ELEC,Burlington Crossings - Tesla Supercharger,1829 Marketplace Dr,Burlington,WA,98233,Public,24 hours daily,Tesla,,,GPS,48.451297,-122.339812,E
+ELEC,Gravity Coffee - Tesla Supercharger,808 W Davis St,Cle Elum,WA,98922,Public - Credit card at all times,24 hours daily; for Tesla use only,Tesla,PARKING_LOT,,GPS,47.195255663717,-120.956107045492,E
+ELEC,Bartell Drugs - Tesla Supercharger,3625 148th St SW,Lynnwood,WA,98087,Public - Credit card at all times,24 hours daily; for Tesla use only,Tesla,PARKING_LOT,,GPS,47.864533,-122.28197,E
+ELEC,Baymont by Wyndham - Tesla Supercharger,1603 E Yakima Ave,Yakima,WA,98901,Public - Credit card at all times,24 hours daily; for Tesla use only,Tesla,HOTEL,,GPS,46.6053776872519,-120.482764497013,E
+ELEC,Ocean Shores Visitor Center - Tesla Supercharger,120 W Chance a La Mer NW,Ocean Shores,WA,98569,Public - Credit card at all times,24 hours daily; for Tesla use only,Tesla,PARKING_LOT,$0.46 per kWh,GPS,47.0080700982166,-124.16514134488,E
+ELEC,SpringHill Suites by Marriott - Tesla Destination,8967 W Airport Dr,Spokane,WA,99224,Public - Credit card at all times,24 hours daily,Tesla Destination,HOTEL,Free,GPS,47.6268814476275,-117.537588234816,E
+ELEC,Coles Corner Market - Tesla Supercharger,15255 US Hwy 2,Leavenworth,WA,98826,Public,24 hours daily; for Tesla use only,Tesla,PARKING_LOT,$0.46 per kWh,GPS,47.755317,-120.740517,E
+ELEC,Microtel Inn & Suites - Tesla Supercharger,224 Bing Ave,George,WA,98848,Public,24 hours daily; for Tesla use only,Tesla,HOTEL,$0.24 per kWh,GPS,47.0810708183483,-119.861968601708,E
+ELEC,Fred Meyer - Tesla Supercharger,12221 120th Ave NE,Kirkland,WA,98034,Public - Credit card at all times,24 hours daily; for Tesla use only,Tesla,GROCERY,$0.29 per kWh,GPS,47.708072,-122.182989,E
+ELEC,Seattle Premium Outlets - Tesla Supercharger,10600 Quil Ceda Blvd,Tulalip,WA,98271,Public - Credit card at all times,24 hours daily; for Tesla use only,Tesla,SHOPPING_MALL,$0.33 per kWh,GPS,48.095571,-122.188473,E
+ELEC,Station 88 - Tesla Supercharger,19615 Elderberry St SW,Rochester,WA,98579,Public - Credit card at all times,24 hours daily; for Tesla use only,Tesla,GAS_STATION,$0.34 per kWh,GPS,46.804051,-123.012244,E
+ELEC,Suquamish Clearwater Casino - Tesla Supercharger,15347 Suquamish Way NE,Suquamish,WA,98392,Public - Credit card at all times,24 hours daily; for Tesla use only,Tesla,SHOPPING_CENTER,$0.28 per kWh,GPS,47.7136161823128,-122.569722790161,E
+ELEC,Park Place - Tesla Supercharger,17401 Southcenter Pkwy,Tukwila,WA,98188,Public - Credit card at all times,24 hours daily; for Tesla use only,Tesla,PARKING_LOT,$0.34 per kWh,GPS,47.44738,-122.263652,E
+ELEC,Tacoma Mall - Tesla Supercharger,4502 S Steele St,Tacoma,WA,98409,Public - Credit card at all times,24 hours daily; for Tesla use only,Tesla,SHOPPING_CENTER,$0.34 per kWh,GPS,47.217448,-122.4672,E
+ELEC,Residence Inn by Marriott - Tesla Destination,800 Fairview Ave N,Seattle,WA,98109,Public - Credit card at all times,24 hours daily,Tesla Destination,HOTEL,$0.25 per kWh,GPS,47.6265091772018,-122.333396382022,E
+ELEC,Sammamish Highlands - Tesla Supercharger,720 228th Ave NE,Sammamish,WA,98074,Public - Credit card at all times,24 hours daily; for Tesla use only,Tesla,SHOPPING_CENTER,$0.25 per kWh,GPS,47.616291,-122.032922,E
