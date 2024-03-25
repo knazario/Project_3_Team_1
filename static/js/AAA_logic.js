@@ -1,4 +1,4 @@
-let data = fetch('./data/Registration_Data/WA_EV_Regs.json')
+let data = fetch('./data/EV_Sales_data/sales.json')
     .then(response => response.json())
     .then(data => {
         console.log(data)

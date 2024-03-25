@@ -31,7 +31,7 @@ body {
   font-size:1.3em;
 }
 
-#sidebar a:active, a:visited {
+#sidebar a:active, #sidebar a:visited {
   color: white; /* Change to the desired color */
 }
 

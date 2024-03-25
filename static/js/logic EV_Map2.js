@@ -123,106 +123,38 @@ function createMap(data_2018, data_2022, zip_data){
         layers: [base2, zip_pop_2022, cluster_2022]
         });
     
-    // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
+    // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to each map (map1 and map2)
     L.control.layers(null, overlayMaps1, {collapsed:false}).addTo(myMap1);
     L.control.layers(null, overlayMaps2,{collapsed:false}).addTo(myMap2);
-    
-    myMap1.sync(myMap2);
+
+    // use leaflet sync plugin to sync maps together. 1 -> 2 and 2 -> 1 allows movement on either to sync
+    myMap1.sync(myMap2);    
     myMap2.sync(myMap1);
     
-    let groupedOverlays = {
-        "2018": {
-          "Population by Zip": zip_pop_2018,
-          "EV Stations Markers": markers_2018,
-          "EV Stations Cluster": cluster_2018
-        },
-        "2022": {
-            "Population by Zip": zip_pop_2022,
-            "EV Stations Markers": markers_2022,
-            "EV Stations Cluster": cluster_2022
-          }
-      };
-      
-      let groupedOverlays2 = {
-        "2018- All Stations": {
-          "Population by Zip": zip_pop_2018,
-          "EV Stations Markers": markers_2018,
-        },
-        "2022- All Stations": {
-            "Population by Zip": zip_pop_2022,
-            "EV Stations Markers": markers_2022,
-          },
-        "Cluster View": {
-            "2018 EV Stations": cluster_2018,
-            "2022 EV Stations": cluster_2022
-          }
-      };
+    // create scale and add to map (only need on 1 map)
+    L.control.scale({maxWidth: 150}).addTo(myMap1); 
 
-      let options = {
-        groupCheckboxes: true,
-        exclusiveGroups: ["Cluster View"]
-      };
+    // create a legend control object
+    var legend = L.control({position: 'bottomright'});
+    // create div for legend and provide values when added to map
+    legend.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend'),
+        population = [0, 2000, 5000, 20000, 30000, 50000, 90000,100000],
+            labels = [];
+        // add legend title
+        div.innerHTML = '<h4> Population</h4>';
+        // loop through our population intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < population.length; i++) {
+            div.innerHTML +=
+                '<i style="background:' + getColor(population[i] + 1) + '"></i> ' +
+                population[i] + (population[i + 1] ? '&ndash;' + population[i + 1] + '<br>' : '+');
+        }
 
-      //L.control.groupedLayers(baseMaps, groupedOverlays2,options).addTo(myMap);
-
-    // create scale and add to map
-    //L.control.scale({maxWidth: 150}).addTo(myMap); 
-
-    // // create a legend control object
-    // var legend = L.control({position: 'bottomright'});
-    // // create div for legend and provide values when added to map
-    // legend.onAdd = function (map) {
-    //     var div = L.DomUtil.create('div', 'info legend'),
-    //     population = [0, 2000, 5000, 20000, 30000, 50000, 90000,100000],
-    //         labels = [];
-    //     // add legend title
-    //     div.innerHTML = '<h4> Population</h4>';
-    //     // loop through our population intervals and generate a label with a colored square for each interval
-    //     for (var i = 0; i < population.length; i++) {
-    //         div.innerHTML +=
-    //             '<i style="background:' + getColor(population[i] + 1) + '"></i> ' +
-    //             population[i] + (population[i + 1] ? '&ndash;' + population[i + 1] + '<br>' : '+');
-    //     }
-
-    //     return div; //returning div to be placed on map
-    // };
-
-    // legend.addTo(myMap);    // add legend to map
+        return div; //returning div to be placed on map
+    };
+    
+    legend.addTo(myMap2);    // add legend to map (only for map2 so only 1 legend on map since it is the same scale)
 }
-
-// // Create a legend providing context for map data
-// function createLegend(myMap){    
-//     var legend = L.control({position: 'bottomright'});
-
-//     legend.onAdd = function() {
-//         var div = L.DomUtil.create("div", "pop-legend");
-//         div.innerHTML += "<h4>Population by Zip Code</h4>";
-//         div.innerHTML += '<i style="background: #00FF00"></i><span>0 - 1K</span><br>';
-//         div.innerHTML += '<i style="background: #477AC2"></i><span>1K - 5K</span><br>';
-//         div.innerHTML += '<i style="background: #87BD7B"></i><span>5K - 25K</span><br>';
-//         div.innerHTML += '<i style="background: #00E700"></i><span>25K - 30K</span><br>';
-//         div.innerHTML += '<i style="background: #B9BAB9"></i><span>30K - 35K</span><br>';
-//         div.innerHTML += '<i style="background: #878987"></i><span>35K - 40K</span><br>';
-//         div.innerHTML += '<i style="background: #737373"></i><span>40K - 50K</span><br>';
-//         div.innerHTML += '<i style="background: #111111"></i><span>50K+</span><br>';
-
-
-// // legend.onAdd = function () {
-// //     var div = L.DomUtil.create('div', 'pop-legend'),
-// //         pops = [0, 1000, 5000, 25000, 30000, 35000, 40000, 50000],
-// //         labels = [];
-
-// //     // loop through our population intervals and generate a label with a colored square for each interval
-// //     for (var i = 0; i < pops.length; i++) {
-// //         div.innerHTML +=
-// //             '<i style="background:' + getColor(pops[i] + 1) + '"></i> ' +
-// //             pops[i] + (pops[i + 1] ? '&ndash;' + pops[i + 1] + '<br>' : '+');
-
-//         return div;
-//     };
-//     legend.addTo(myMap);
-// }
-//createLegend(myMap);
 
 // function receives geojson, marker color and type (marker vs cluster) and creates/returns leaflet overlay layer
 function addStations(data, marker_color, marker_type){
