@@ -1,5 +1,7 @@
 # UC Berkeley Data Analytics Bootcamp Project #3- Team 1
-## Analysis and visualizations of EV charging stations in relations to population, as well as visualization of services around charging stations and a breakdown of electric vehicle registration information in Washington State. 
+## Analysis and visualizations of EV charging stations in relation to population, as well as visualization of services around charging stations and a breakdown of electric vehicle registration information in Washington State.
+
+## [Slide Deck Presentation](https://docs.google.com/presentation/d/1rJnLBgEE1-EYBnG3U2ecyzHRxKky46Z0LkpK-uAAsp0/edit?usp=sharing)
 
 ## Why did we choose this topic?
 Electric cars have been noticeably on the incline in the last decade. With strong efforts by governments worldwide to go green and the incentivization of regenerative energy sources, our team was interested in the rate of change of the increase of electric cars along with the development of charging stations throughout the state of Washington. 
@@ -28,4 +30,4 @@ We plan to use a map with filters that are including but not limited to:
 - Entertainment - Amount & relative distance to charging stations
 
 ## Ethical Considerations
-- We take the ethics of data...
+- We took the ethical handling of our data very seriously for this project. We made sure to only use publicly-available data, sourced from open-source government websites. Privacy is one of our top priorities, and none of the data used contains personally identifiable information or anything that could potentially identify any individuals or groups. We have repurposed this data for instructional and educational purposes only, and will never use it for any monetization or commercial purposes. The preparation of our data was done simply to filter and extract the most relevant information for our project (narrowing our data only to the State of Washington), and none of the data was altered in any way that would compromise the accuracy or anonymity of the source data.
