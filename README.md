@@ -22,6 +22,7 @@ We honed in on Washington State as registered car data was more publicly accessi
 
 ## Database used to host our project
 - [MongoDB Atlas](https://www.mongodb.com/atlas/database)
+- Screenshots for our hosted database on MongoDB Atlas (using Compass) can be found in the repository under [MongoDB_Screenshots](https://github.com/knazario/Project_3_Team_1/tree/main/MongoDB_Screenshots)
 
 We plan to use a map with filters that are including but not limited to: 
 - Population density - by zipcode
