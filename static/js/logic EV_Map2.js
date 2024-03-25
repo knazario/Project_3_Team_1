@@ -24,6 +24,13 @@ d3.json(WASHINGTON_2018).then(function(data_2018) {
                     feature.population_2022 = pop_dict_2022[wash_zip]; 
                 }
                 console.log(zip_data.features);
+                for (i = 0; i < zip_data.features.length; i++){
+                    if(zip_data.features[i].properties.ZCTA5CE10== '98205'){
+                        let feature = zip_data.features[i].properties;
+                        console.log(feature.population_2018);
+                        console.log(feature.population_2022);
+                    }
+                }
                 // send ev sations data (2018 and 2022) and zip_code geometry to createMap function
                 createMap(data_2018, data_2022,zip_data);
             });
@@ -111,7 +118,7 @@ function createMap(data_2018, data_2022, zip_data){
         zoom: 7,
         maxBounds: L.latLngBounds(L.latLng(44, -128), L.latLng(51, -114)),  // utilized getBounds() to keep pane around washington
         layers: [base2, zip_pop_2022, cluster_2022],
-        zoomControl:false
+        zoomControl:false   //remove zoom from map2- only need on one map 
         });
     
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to each map (map1 and map2)
@@ -131,15 +138,15 @@ function createMap(data_2018, data_2022, zip_data){
     // create div for legend and provide values when added to map
     legend.onAdd = function (map) {
         var div = L.DomUtil.create('div', 'info legend'),
-        population = [0, 2000, 5000, 20000, 30000, 50000, 90000,100000],
-            labels = [];
+        population = [0, 1000, 5000, 25000, 30000, 35000, 40000,50000],
+            labels = ['0', '1K','5K','25K','30K','35K','40K','50K'];
         // add legend title
         div.innerHTML = '<h4> Population</h4>';
         // loop through our population intervals and generate a label with a colored square for each interval
         for (var i = 0; i < population.length; i++) {
             div.innerHTML +=
                 '<i style="background:' + getColor(population[i] + 1) + '"></i> ' +
-                population[i] + (population[i + 1] ? '&ndash;' + population[i + 1] + '<br>' : '+');
+                labels[i] + (labels[i + 1] ? ' &ndash; ' + labels[i + 1] + '<br>' : '+');
         }
 
         return div; //returning div to be placed on map
@@ -272,4 +279,4 @@ function on_each_feature_zip(feature, layer,feature_pop, year ) {
           });
         }
     })
-}  
+}

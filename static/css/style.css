@@ -7,16 +7,16 @@ body {
   padding: 0;
   margin: 0;
 }
-
+/*Main Body container*/
 #container{
   height: 100%;
   display:flex;
 }
-
+/*sidebar menu*/
 #sidebar{
   flex:1;
   height:100%;
-  width:200px;
+  width:200px;  /*fixed width*/
   float: left;
   background-color: #777;
   color:aliceblue;
@@ -30,13 +30,13 @@ body {
   text-align:center;
   font-size:1.3em;
 }
-
+/*change colors based on link status (active, visited, hover)*/
 #sidebar a:active {
   color: rgb(0, 170, 255); 
 }
 
 #sidebar a:visited{
-  color: white; 
+  color: white;     
 }
 
 #sidebar a:hover {
@@ -49,13 +49,12 @@ body {
 }
 
 #map-container{
-  width: calc(100% - 200px);
+  width: calc(100% - 200px);/*fill rest of page*/
   height:100%;
 }
 
 #map {
   height: 100%; 
-  margin-right: 5px; 
 }
 /*Population Legend Info*/
 .legend {
@@ -63,8 +62,8 @@ body {
   font: 14px Arial, Helvetica, sans-serif;
   background: white;
   background: rgba(255, 255, 255, 0.8);
-  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
-  /*border-radius: 5px;*/
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
   line-height: 24px;
   color: #555;
 }
