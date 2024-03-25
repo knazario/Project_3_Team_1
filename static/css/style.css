@@ -1,17 +1,54 @@
-body {
-  padding: 0;
-  margin: 0;
-}
-
-#map {
-  height: 100%; 
-}
-
 html, 
 body{
   height: 100%;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#container{
+  height: 100%;
+  display:flex;
+}
+
+#sidebar{
+  flex:1;
+  height:100%;
+  width:200px;
+  float: left;
+  background-color: #777;
+  color:aliceblue;
+
+}
+
+#sidebar p {
+  display:block;
+  margin-top: 10px;
+  margin-bottom:50px;
+  text-align:center;
+  font-size:1.3em;
+}
+
+#sidebar a:active, a:visited {
+  color: white; /* Change to the desired color */
+}
+
+#sidebar h2{
+  margin: 10 10px;
+  text-align:center;
+}
+
+#map-container{
+  width: calc(100% - 200px);
+  height:100%;
+}
+
+#map {
+  height: 100%; 
+  margin-right: 5px; 
+}
 /*Population Legend Info*/
 .legend {
   padding: 6px 8px;
@@ -30,11 +67,6 @@ body{
   color: #777;
 }
 
-.legend span {
-  position: relative;
-  bottom: 3px;
-}
-
 .legend i {
   width: 18px;
   height: 18px;
@@ -46,28 +78,4 @@ body{
 .legend i.icon {
   background-size: 18px;
   background-color: rgba(255, 255, 255, 1);
-}
-
-.pop-legend {
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.pop-legend h4 {
-  margin: 0 0 0 0;
-  text-align: center;
-}
-
-.pop-legend span {
-  position: relative;
-  /* top: 4px; */
-}
-
-.pop-legend i {
-  width: 18px;
-  height: 17px;
-  float: left;
-  margin: 0 8px 0 0;
-  opacity: .4;
 }

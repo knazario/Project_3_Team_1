@@ -96,12 +96,12 @@ function createMap(data_2018, data_2022, zip_data){
 
     // set coordinates for approx. center of washington
     let wash_center = [47.3, -120.8];     // zoom level 7.5
-    
+    let wash_zoom = 7.5;
     // Create the map object with options. 
     let myMap = L.map("map", {
     center: wash_center,
     zoomSnap: .5,   // allows zoom to increment by .5 levels
-    zoom: 7.5,
+    zoom: wash_zoom,
     maxBounds: L.latLngBounds(L.latLng(44, -128), L.latLng(51, -114)),  // utilized getBounds() to keep pane around washington
     layers: [base, zip_pop_2018, markers_2018]
     });
@@ -170,6 +170,13 @@ function createMap(data_2018, data_2022, zip_data){
     };
 
     legend.addTo(myMap);    // add legend to map
+
+    L.control.resetView({
+        position: "topleft",
+        title: "Reset view",
+        latlng: wash_center,
+        zoom: wash_zoom,
+    }).addTo(myMap);
 }
 
 // function receives geojson, marker color and type (marker vs cluster) and creates/returns leaflet overlay layer

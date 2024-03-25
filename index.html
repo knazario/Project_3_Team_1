@@ -27,11 +27,15 @@
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
 
-  <!-- GroupedLayer Control Plugin JS -->
+  <!-- GroupedLayer Control Plugin JS and CSS -->
   <script src="static/js/leaflet.groupedlayercontrol.min.js"></script>
   <!-- GroupedLayer Control Plugin CSS -->
   <link rel="stylesheet" type="text/css" href="static/css/leaflet.groupedlayercontrol.min.css">
   
+  <!-- Reset View plugin JS/CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview/dist/L.Control.ResetView.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview/dist/L.Control.ResetView.min.js"></script>
+
   <!-- Project CSS -->
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
 
@@ -40,8 +44,20 @@
 <body>
 
 <!-- The div that holds our map -->
-<div id="map"></div>
-
+<div id = "container">
+  <div id = "sidebar">
+    <h2>EV Charging Station Visualizations</h2><hr>
+    <br>
+    <p><a href = index.html>EV Station Map <br>2018-2022</a></p>
+    <p><a href = EV_Map2.html>EV Station Map <br>Side-By-Side</a></p>
+    <p><a href = sales.html>EV Registration Data</a></p>
+    <p><a href = index2.html>EV Registration v2</a></p>
+    <p><a href = data/thomas_roughdraft_map.html>Restaurants Near <br>EV Stations Map</a></p>
+  </div>
+  <div id= "map-container">
+    <div id="map"></div>
+  </div>
+</div>
 <!-- Project JavaScript -->
 <script type="text/javascript" src="static/js/logic.js"></script>
 

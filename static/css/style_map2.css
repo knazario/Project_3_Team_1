@@ -70,11 +70,6 @@ body {
   color: #777;
 }
 
-.legend span {
-  position: relative;
-  bottom: 3px;
-}
-
 .legend i {
   width: 18px;
   height: 18px;
@@ -86,28 +81,4 @@ body {
 .legend i.icon {
   background-size: 18px;
   background-color: rgba(255, 255, 255, 1);
-}
-
-.pop-legend {
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.pop-legend h4 {
-  margin: 0 0 0 0;
-  text-align: center;
-}
-
-.pop-legend span {
-  position: relative;
-  /* top: 4px; */
-}
-
-.pop-legend i {
-  width: 18px;
-  height: 17px;
-  float: left;
-  margin: 0 8px 0 0;
-  opacity: .4;
 }
