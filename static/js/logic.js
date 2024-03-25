@@ -23,7 +23,9 @@ d3.json(WASHINGTON_2018).then(function(data_2018) {
                     feature.population_2018 = pop_dict_2018[wash_zip]; 
                     feature.population_2022 = pop_dict_2022[wash_zip]; 
                 }
-                console.log(zip_data.features);
+                // console log to check data was added 
+                console.log(zip_data.features); 
+
                 // send ev sations data (2018 and 2022) and zip_code geometry to createMap function
                 createMap(data_2018, data_2022,zip_data);
             });
@@ -105,27 +107,13 @@ function createMap(data_2018, data_2022, zip_data){
     maxBounds: L.latLngBounds(L.latLng(44, -128), L.latLng(51, -114)),  // utilized getBounds() to keep pane around washington
     layers: [base, zip_pop_2018, markers_2018]
     });
-    
+
+    //console log to find determine good values for maxBounds in map
     console.log('Southwest:', myMap.getBounds().getSouthWest().toString()); 
     console.log('Northeast:', myMap.getBounds().getNorthEast().toString());
 
-    // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
-    //L.control.layers(baseMaps, overlayMaps).addTo(myMap);
-    
-    let groupedOverlays = {
-        "2018": {
-          "Population by Zip": zip_pop_2018,
-          "EV Stations Markers": markers_2018,
-          "EV Stations Cluster": cluster_2018
-        },
-        "2022": {
-            "Population by Zip": zip_pop_2022,
-            "EV Stations Markers": markers_2022,
-            "EV Stations Cluster": cluster_2022
-          }
-      };
-      
-      let groupedOverlays2 = {
+    // create groupedOverlay using groupedlayercontrol plugin syntax for layer selection control
+      let groupedOverlays = {
         "2018- All Stations": {
           "Population by Zip": zip_pop_2018,
           "EV Stations Markers": markers_2018,
@@ -139,13 +127,13 @@ function createMap(data_2018, data_2022, zip_data){
             "2022 EV Stations": cluster_2022
           }
       };
-
+      // set options for layer control to allow groups to toggle checkboxes 
       let options = {
         groupCheckboxes: true,
-        //exclusiveGroups: ["Cluster View"]
       };
 
-      L.control.groupedLayers(baseMaps, groupedOverlays2,options).addTo(myMap);
+    // Create a layer control, and pass it baseMaps and groupedOverlays. Add the layer control to the map.
+      L.control.groupedLayers(baseMaps, groupedOverlays,options).addTo(myMap);
 
     // create scale and add to map
     L.control.scale({maxWidth: 150}).addTo(myMap); 
