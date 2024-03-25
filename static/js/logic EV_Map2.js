@@ -52,18 +52,8 @@ function createMap(data_2018, data_2022, zip_data){
     let base2 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     })
-    // create additional base layer (dark)
-    let dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 20
-    });
 
-    // Create a baseMaps object to hold 2 base layers.
-    let baseMaps = {
-        "Street Layer": base, 
-        "Dark Layer": dark
-    };
+    
     // call addStations function for the EV station layers, passing data, marker color and 
     // layergroup type (markers or cluster). addStations returns a Leaflet layergroup
     let markers_2018 = addStations(data_2018, 'red', 'marker');
@@ -91,25 +81,25 @@ function createMap(data_2018, data_2022, zip_data){
 
     // Create an overlayMaps object to hold the EV station layers and zip code choropleths.
     let overlayMaps1 = {
-        "EV Stations 2018": markers_2018,
         "Population by Zip (2018)": zip_pop_2018, 
+        "EV Stations 2018": markers_2018,
         "EV Stations Cluster (2018)" : cluster_2018
     }
 
     let overlayMaps2 = {
-        "EV Stations 2022": markers_2022,
         "Population by Zip (2022)": zip_pop_2022,
+        "EV Stations 2022": markers_2022,
         "EV Stations Cluster (2022)" : cluster_2022
     };
 
     // set coordinates for approx. center of washington
     let wash_center = [47.3, -120.8];     // zoom level 7.5
-
+    let wash_zoom = 7;
     // Create the map object with options. 
     let myMap1 = L.map("map1", {
     center: wash_center,
     zoomSnap: .5,   // allows zoom to increment by .5 levels
-    zoom: 7,
+    zoom: wash_zoom,
     maxBounds: L.latLngBounds(L.latLng(44, -128), L.latLng(51, -114)),  // utilized getBounds() to keep pane around washington
     layers: [base, zip_pop_2018, cluster_2018]
     });
@@ -120,10 +110,12 @@ function createMap(data_2018, data_2022, zip_data){
         zoomSnap: .5,   // allows zoom to increment by .5 levels
         zoom: 7,
         maxBounds: L.latLngBounds(L.latLng(44, -128), L.latLng(51, -114)),  // utilized getBounds() to keep pane around washington
-        layers: [base2, zip_pop_2022, cluster_2022]
+        layers: [base2, zip_pop_2022, cluster_2022],
+        zoomControl:false
         });
     
     // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to each map (map1 and map2)
+    // collapsed option shows layer selector from load and does not collapse/disappear
     L.control.layers(null, overlayMaps1, {collapsed:false}).addTo(myMap1);
     L.control.layers(null, overlayMaps2,{collapsed:false}).addTo(myMap2);
 
@@ -152,8 +144,18 @@ function createMap(data_2018, data_2022, zip_data){
 
         return div; //returning div to be placed on map
     };
-    
-    legend.addTo(myMap2);    // add legend to map (only for map2 so only 1 legend on map since it is the same scale)
+
+    // add legend to map (only for map2 so only 1 legend on map since it is the same scale)
+    legend.addTo(myMap2);    
+
+    // Add resetview button below zoom control to allow easy return to default view option
+    // only needed on one map since they are synched 
+    L.control.resetView({
+        position: "topleft",
+        title: "Reset view",
+        latlng: wash_center,
+        zoom: wash_zoom,
+    }).addTo(myMap1);
 }
 
 // function receives geojson, marker color and type (marker vs cluster) and creates/returns leaflet overlay layer

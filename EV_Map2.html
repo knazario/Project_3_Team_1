@@ -27,13 +27,12 @@
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
 
-  <!-- GroupedLayer Control Plugin JS -->
-  <script src="static/js/leaflet.groupedlayercontrol.min.js"></script>
-  <!-- GroupedLayer Control Plugin CSS -->
-  <link rel="stylesheet" type="text/css" href="static/css/leaflet.groupedlayercontrol.min.css">
-
-  <!-- GroupedLayer Control Plugin JS -->
+  <!-- Leaflet-sync Control Plugin JS -->
   <script src="static/js/L.Map.Sync.js"></script>
+
+    <!-- Reset View plugin JS/CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview/dist/L.Control.ResetView.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview/dist/L.Control.ResetView.min.js"></script>  
 
   <!-- Project CSS -->
   <link rel="stylesheet" type="text/css" href="static/css/style_map2.css">
@@ -42,8 +41,9 @@
 
 <body>
 
-<!-- The div that holds our map -->
+<!-- The div that holds our map and sidebar -->
 <div id = "container">
+  <!-- The div that holds our menu/sidebar -->
   <div id = "sidebar">
     <h2>EV Charging Station Visualizations</h2><hr>
     <br>
@@ -52,6 +52,7 @@
     <p><a href = sales.html>EV Registration Data</a></p>
     <p><a href = data/thomas_roughdraft_map.html>Restaurants Near <br>EV Stations Map</a></p>
   </div>
+  <!-- The div that holds our side-by-side maps-->
   <div id= "map-container">
     <div id="map1"></div>
     <div id="map2"></div>

@@ -31,8 +31,16 @@ body {
   font-size:1.3em;
 }
 
-#sidebar a:active, #sidebar a:visited {
-  color: white; /* Change to the desired color */
+#sidebar a:active {
+  color: rgb(0, 170, 255); 
+}
+
+#sidebar a:visited{
+  color: white; 
+}
+
+#sidebar a:hover {
+  color: #00FF00;
 }
 
 #sidebar h2{

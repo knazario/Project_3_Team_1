@@ -158,7 +158,8 @@ function createMap(data_2018, data_2022, zip_data){
     };
 
     legend.addTo(myMap);    // add legend to map
-
+    
+    // Add resetview button below zoom control to allow easy return to default view option
     L.control.resetView({
         position: "topleft",
         title: "Reset view",
