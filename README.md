@@ -28,4 +28,4 @@ We plan to use a map with filters that are including but not limited to:
 - Entertainment - Amount & relative distance to charging stations
 
 ## Ethical Considerations
-- We take the ethics of data...
+- We took the ethical handling of our data very seriously for this project. We made sure to only use publicly-available data, sourced from open-source government websites. Privacy is one of our top priorities, and none of the data used contains personally identifiable information or anything that could potentially identify any individuals or groups. We have repurposed this data for instructional and educational purposes only, and will never use it for any monetization or commercial purposes. The preparation of our data was done simply to filter and extract the most relevant information for our project (narrowing our data only to the State of Washington), and none of the data was altered in any way that would compromise the accuracy or anonymity of the source data.
