@@ -28,4 +28,4 @@ We plan to use a map with filters that are including but not limited to:
 - Entertainment - Amount & relative distance to charging stations
 
 ## Ethical Considerations
-- We take the ethics of data 
+- We take the ethics of data...
