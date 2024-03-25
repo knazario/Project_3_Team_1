@@ -6,9 +6,9 @@ Electric cars have been noticeably on the incline in the last decade. With stron
 
 ## Data Sources
 We honed in on Washington State as registered car data was more publicly accessible. Sources being used are: 
-- [Alternative Fuels Data Center- EV Charging Station Information](https://afdc.energy.gov/stations/states)
-- [Washington State EV Registration Data](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Size-History-By-County/3d5d-sdqb/about_data)
-- [Census and population data](https://www.census.gov/data/developers/data-sets/acs-5year.html)
+- EV Charging Station Information: [Alternative Fuels Data Center](https://afdc.energy.gov/stations/states)
+- EV Registration Data: [State of Washington Open Data Portal- EV Registrations by County](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Size-History-By-County/3d5d-sdqb/about_data)
+- Zip Code Population Data: [US Census Bureau American Community Survey 5-Year Data](https://www.census.gov/data/developers/data-sets/acs-5year.html)
 
 ## Libraries Used
 - [Geoapify API Documentation](https://apidocs.geoapify.com/docs/place-details/#api/)
