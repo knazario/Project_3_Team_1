@@ -1,5 +1,7 @@
 # UC Berkeley Data Analytics Bootcamp Project #3- Team 1
-## Analysis and visualizations of EV charging stations in relations to population, as well as visualization of services around charging stations and a breakdown of electric vehicle registration information in Washington State. 
+## Analysis and visualizations of EV charging stations in relation to population, as well as visualization of services around charging stations and a breakdown of electric vehicle registration information in Washington State.
+
+## [Slide Deck Presentation](https://docs.google.com/presentation/d/1rJnLBgEE1-EYBnG3U2ecyzHRxKky46Z0LkpK-uAAsp0/edit?usp=sharing)
 
 ## Why did we choose this topic?
 Electric cars have been noticeably on the incline in the last decade. With strong efforts by governments worldwide to go green and the incentivization of regenerative energy sources, our team was interested in the rate of change of the increase of electric cars along with the development of charging stations throughout the state of Washington. 
