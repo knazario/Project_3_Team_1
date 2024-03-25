@@ -12,7 +12,7 @@ d3.json(WASHINGTON_2018).then(function(data_2018) {
         d3.json(ZIP_CODES).then(function(zip_data){
             d3.json(CENSUS_2018_PATH).then(function(census_data_2018){
                 d3.json(CENSUS_2022_PATH).then(function(census_data_2022){
-                    
+                
                 //create dictionary of census population data for 2018 and 2022 (zip:pop)
                 let pop_dict_2018 = createPop_dict(census_data_2018)
                 let pop_dict_2022 = createPop_dict(census_data_2022);
