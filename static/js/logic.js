@@ -229,14 +229,14 @@ function addStations(data, marker_color, marker_type){
 }
 // return color for choropleth baesd on zip code population
 function getColor(d) {
-    return d > 50000 ? '#111111' :
-           d > 40000  ? '#737373' :
+    return d > 50000 ? '#000000' :
+           d > 40000  ? '#434343' :
            d > 35000  ? '#878987' :
            d > 30000  ? '#B9BAB9' :
-           d > 25000  ? '#00E700' :
-           d > 5000   ? '#87BD7B' :
-           d > 1000   ? '#00CC00' :
-                         '#00FF00';
+           d > 25000  ? '#A8D1A6' :
+           d > 5000   ? '#7DF077' :
+           d > 1000   ? '#0CFC00' :
+                         '#0AC700';
 }
 // style zip choropleth with population changing color 
 function style_zip(feature_pop) {
