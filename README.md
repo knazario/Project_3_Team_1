@@ -21,6 +21,8 @@ We honed in on Washington State as registered car data was more publicly accessi
 - [Geoapify API Documentation](https://apidocs.geoapify.com/docs/place-details/#api/)
 - [Chart.js](https://www.chartjs.org/)
 - [Folium](https://python-visualization.github.io/folium/latest/) - Allows for integration of Python and Leaflet
+- [Plotly Express] (https://plotly.com/python/plotly-express/)
+- [Geopandas] https://geopandas.org/en/stable/about.html
 
 ## Database used to host our project
 - [MongoDB Atlas](https://www.mongodb.com/atlas/database)
