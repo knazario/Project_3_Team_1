@@ -14,6 +14,8 @@ We honed in on Washington State as registered car data was more publicly accessi
 - Vector Map of Washington State Zip Codes: [Cartography Vectors](https://cartographyvectors.com/map/1617-washington-zip-codes)
 
 ## Libraries & Plugins Used
+- [d3](https://d3js.org/)
+- [Leaflet](https://leafletjs.com/)
 - [Leaflet Marker Cluster](https://github.com/Leaflet/Leaflet.markercluster)- This plugin allowed us to create clustered groups of markers for the EV stations so that visually you are able to see the number of clusters in an area on the map and declutter the map. When you zoom in on a cluster, you can see and interact with individual EV stations as you would regular markers.
 - [Leaflet - Grouped Layer Control](https://github.com/ismyrnow/leaflet-groupedlayercontrol/tree/gh-pages)- This plugin provided a way to group layers in our layer control box so that you can toggle the different years on and off as a unit (i.e. 2018 layers). This makes interacting with the map more intuitive and user-friendly.
 - [Leaflet- Sync](https://github.com/jieter/Leaflet.Sync)- This plugin provides a way to sync the movement of 2 or more maps on the same page. For our side-by-side map view of the EV stations, this allowed the maps to zoom and move together so that the user can compare 2018 and 2022 side-by-side.
