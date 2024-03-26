@@ -29,20 +29,23 @@ We honed in on Washington State as registered car data was more publicly accessi
 - Screenshots for our hosted database on MongoDB Atlas (using Compass) can be found in the repository under [MongoDB_Screenshots](https://github.com/knazario/Project_3_Team_1/tree/main/MongoDB_Screenshots)
 
 ## Project Overview
-We plan to use a map with filters that are including but not limited to:
-- Population density - by zipcode
-- Charging stations - markers that identity each station in addition to information on those stations
-- Restaurants - Amount & relative distance to charging stations
+This project invovled created several interactive charts and maps related to EV Charging Stations and EV Vehichle Acquisition/Ownersihp. Visuals created include: 
+- Interactive map with a choropleth of zip code boundaries showing population density along with the locations of EV charging stations in 2018 and 2022
+- Side-by-side view of the interactive map to better visualize changes over time (2018 map and 2022 map) 
+- Charts showing changes from 2018-2022 related to EV car acquisition (through car registation data)
+- Interactive map showing nearby coffee shops to a subset of charging stations (Tesla network)
+
+Note: For all maps, information about the layers and markers will pop-up when clicked on. 
 
 ## Instructions
-Click [this link](https://knazario.github.io/Project_3_Team_1/) to be redirected to our project page. Here, the user can see our map of Washington State, broken down by zip code with red markers identifying the location of EV charging stations. The color-fill for each zip code is dependent on the population in that zip code. Filter options located in the upper-right corner of the map allow the user to select which year (2018 or 2022) they would like to see EV station markers, as well as population information for each zip code.
+Click [this link](https://knazario.github.io/Project_3_Team_1/) to be redirected to our project page. Here, the user can see our map of Washington State, broken down by zip code with red markers identifying the location of EV charging stations (2018 data). The color-fill for each zip code is dependent on the population in that zip code. Filter options located in the upper-right corner of the map allow the user to select which year (2018 or 2022) they would like to see EV station markers, as well as population information for each zip code. Users can also choose to dispaly individual markers for the year and/or add a marker cluser layer to clusters of stations across the state. 
 
 On the left side of the page, we created a sidebar where the user can navigate to:
 - A side-by-side view of our maps, which gives an alternative view to compare the changes in both EV charger locations as well as population changes by zip code from 2018 to 2022
 - Two graphical representations of EV registration data over 5 years:
     - A bar chart showing the difference between EV and Non-EV registartions
     - A line chart showing the growth trend of EVs
-- An interactive map highlighting several Tesla charging stations around the sate, as well as information on facilities and services nearby those charging stations
+- An interactive map highlighting several Tesla charging stations around the sate, as well as information on coffee shops and services nearby those charging stations
 
 ## Analysis
 - Based off the information we gathered, there does seem to be an ever-growing increase of EV registrations, as well as an increase of EV charging stations around the State of Washington. This indicates to us that electric vehicles are indeed becoming more and more popular, and we believe that with the improvements and higher number of charging stations (as well as facilities, services, and food options around those charging stations), the adoption rate of electric vehicles will continue to grow into the future. Right now, the highest concentrations of charging stations and EV registrations seems to be in more dense urban areas, however the trend is consistent across even the more rural areas where charging stations are becoming more and more accessible.
