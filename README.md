@@ -26,7 +26,8 @@ We honed in on Washington State as registered car data was more publicly accessi
 
 ## Database used to host our project
 - [MongoDB Atlas](https://www.mongodb.com/atlas/database)
-- Screenshots for our hosted database on MongoDB Atlas (using Compass) can be found in the repository under [MongoDB_Screenshots](https://github.com/knazario/Project_3_Team_1/tree/main/MongoDB_Screenshots)
+- Screenshots for our hosted database on MongoDB Atlas (using Compass) can be found in the repository under [MongoDB_Screenshots](https://github.com/knazario/Project_3_Team_1/tree/main/MongoDB_Screenshots).
+- The screenshots include a summary screenshot showing all the collections in the Project 3 databae. Additionally, there is a more detailed view screenshot for each type of collection (EV Station, Census, Registration...etc.).
 
 ## Project Overview
 This project invovled created several interactive charts and maps related to EV Charging Stations and EV Vehichle Acquisition/Ownersihp. Visuals created include: 
