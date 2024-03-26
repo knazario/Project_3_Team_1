@@ -24,13 +24,7 @@ d3.json(WASHINGTON_2018).then(function(data_2018) {
                     feature.population_2022 = pop_dict_2022[wash_zip]; 
                 }
                 console.log(zip_data.features);
-                for (i = 0; i < zip_data.features.length; i++){
-                    if(zip_data.features[i].properties.ZCTA5CE10== '98205'){
-                        let feature = zip_data.features[i].properties;
-                        console.log(feature.population_2018);
-                        console.log(feature.population_2022);
-                    }
-                }
+
                 // send ev sations data (2018 and 2022) and zip_code geometry to createMap function
                 createMap(data_2018, data_2022,zip_data);
             });
@@ -86,7 +80,7 @@ function createMap(data_2018, data_2022, zip_data){
         return on_each_feature_zip(feature, layer, feature.properties.population_2022, '2022')}
        });
 
-    // Create an overlayMaps object to hold the EV station layers and zip code choropleths.
+    // Create an overlayMaps object to hold the EV station layers and zip code choropleths for each map (2018/2022)
     let overlayMaps1 = {
         "Population by Zip (2018)": zip_pop_2018, 
         "EV Stations 2018": markers_2018,
@@ -102,7 +96,7 @@ function createMap(data_2018, data_2022, zip_data){
     // set coordinates for approx. center of washington
     let wash_center = [47.3, -120.8];     // zoom level 7.5
     let wash_zoom = 7;
-    // Create the map object with options. 
+    // Create the map object with options for 2018 layers 
     let myMap1 = L.map("map1", {
     center: wash_center,
     zoomSnap: .5,   // allows zoom to increment by .5 levels
@@ -111,7 +105,7 @@ function createMap(data_2018, data_2022, zip_data){
     layers: [base, zip_pop_2018, cluster_2018]
     });
 
-    // Create the map object with options. 
+    // Create the map object with options for 2022 layers 
     let myMap2 = L.map("map2", {
         center: wash_center,
         zoomSnap: .5,   // allows zoom to increment by .5 levels
